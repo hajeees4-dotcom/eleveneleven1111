@@ -388,7 +388,7 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding:32px 16px 28px
     <a href="#/account" data-r="account" id="drawerAcc"><span class="ic">👤</span>حسابي</a>
     <a href="privacy.html"><span class="ic">🔒</span>سياسة الخصوصية</a>
     <a href="terms.html"><span class="ic">📄</span>شروط الاستخدام</a>
-    <a href="https://x.com/elevenelev1111" target="_blank" rel="noopener"><span class="ic">𝕏</span>تابعنا على إكس</a>
+    <a href="https://x.com/Eleven11ElevenS" target="_blank" rel="noopener"><span class="ic">𝕏</span>تابعنا على إكس</a>
   </div>
   <div class="drawer-foot">11:11 Sports © 2026</div>
 </aside>
@@ -405,7 +405,7 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding:32px 16px 28px
     <a href="#/plans">الاشتراك</a>
     <a href="privacy.html">سياسة الخصوصية</a>
     <a href="terms.html">شروط الاستخدام</a>
-    <a href="https://x.com/elevenelev1111" target="_blank" rel="noopener">إكس</a>
+    <a href="https://x.com/Eleven11ElevenS" target="_blank" rel="noopener">إكس</a>
   </div>
   11:11 Sports — جميع الحقوق محفوظة © 2026
 </footer>
@@ -435,7 +435,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getFirestore, collection, getDocs, doc, getDoc, setDoc, increment }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
-  updateProfile, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup }
+  updateProfile, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup,
+  signInWithRedirect, getRedirectResult }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const app = initializeApp({
@@ -1112,7 +1113,7 @@ const G_SVG = '<svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20
 V.login = (q) => {
   if (S.user) { location.hash = '#/account'; return ''; }
   const mode = S.authMode;
-  const msg = S.authMsg ? '<div class="msg '+S.authMsg[0]+'">'+esc(S.authMsg[1])+'</div>' : '';
+  const msg = !S.authMsg ? '' : S.authMsg[0] === 'inapp' ? inAppHTML() : '<div class="msg '+S.authMsg[0]+'">'+esc(S.authMsg[1])+'</div>';
   const busy = S.authBusy ? ' disabled' : '';
   if (mode === 'reset'){
     return '<div class="auth"><h1>استعادة كلمة المرور</h1><div class="sub">أدخل بريدك وسنرسل لك رابطاً لتعيين كلمة مرور جديدة.</div>' + msg
@@ -1125,6 +1126,7 @@ V.login = (q) => {
     + '<div class="sub">'+(reg?'حساب مجاني يحفظ فرقك المفضلة ويعمل على الموقع والتطبيق.':'أهلاً بعودتك — حسابك نفسه في الموقع والتطبيق.')+'</div>'
     + '<div class="seg"><button class="'+(!reg?'on':'')+'" data-act="mode" data-m="login">دخول</button><button class="'+(reg?'on':'')+'" data-act="mode" data-m="register">حساب جديد</button></div>'
     + msg
+    + (IN_APP && !S.authMsg ? inAppHTML() : '')
     + '<button class="g-btn" data-act="google"'+busy+'>'+G_SVG+'المتابعة بحساب جوجل</button>'
     + '<div class="or">أو بالبريد الإلكتروني</div>'
     + '<form data-form="'+mode+'">'
@@ -1153,7 +1155,7 @@ V.account = () => {
     + (favMatches().length ? '<section class="sec"><div class="sec-head"><h2>📅 مباريات فرقك القادمة</h2></div>' + favMatches().map(m => card(m)).join('') + '</section>' : '')
     + '<div class="info-box"><h3>🕐 التوقيت</h3>' + tzSelect() + '</div>'
     + '<div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-dark" data-act="logout">تسجيل الخروج</button>'
-    + '<a class="btn btn-dark" href="https://x.com/elevenelev1111" target="_blank" rel="noopener">طلب حذف الحساب</a></div></div>';
+    + '<a class="btn btn-dark" href="https://x.com/Eleven11ElevenS" target="_blank" rel="noopener">طلب حذف الحساب</a></div></div>';
 };
 
 V.notfound = () => empty('الصفحة غير موجودة', '<a href="#/" style="color:var(--gold)">العودة للرئيسية</a>');
@@ -1224,7 +1226,19 @@ const AUTH_ERR = {
   'auth/unauthorized-domain':'هذا النطاق غير مفعّل بعد لتسجيل الدخول بجوجل',
   'auth/operation-not-allowed':'طريقة الدخول هذه غير مفعّلة حالياً',
 };
-const authErr = e => AUTH_ERR[e && e.code] || 'حدث خطأ غير متوقع — حاول مرة أخرى';
+const authErr = e => AUTH_ERR[e && e.code] || ('تعذّر تسجيل الدخول — حاول مرة أخرى' + (e && e.code ? ' (' + e.code + ')' : ''));
+
+/* متصفحات التطبيقات (إكس، إنستغرام، سناب، تيك توك…) — جوجل يمنع تسجيل الدخول داخلها */
+const UA = navigator.userAgent || '';
+const IN_APP = /FBAN|FBAV|FB_IAB|Instagram|Twitter|TwitterAndroid|Snapchat|musical_ly|TikTok|BytedanceWebview|Line\/|LinkedInApp|; wv\)/i.test(UA);
+const IS_IOS = /iPhone|iPad|iPod/i.test(UA);
+function inAppHTML(){
+  const url = location.href.split('#')[0];
+  return '<div class="msg err" style="line-height:1.9"><b>جوجل لا يسمح بتسجيل الدخول من داخل هذا التطبيق.</b><br>'
+    + (IS_IOS ? 'اضغط على <b>⋯</b> أو <b>مشاركة</b> ثم اختر <b>«فتح في Safari»</b>.' : 'اضغط على <b>⋮</b> ثم اختر <b>«فتح في Chrome»</b> أو «فتح في المتصفح».')
+    + '<br>أو انسخ الرابط والصقه في المتصفح:</div>'
+    + '<button class="btn btn-dark btn-block" data-act="copylink" style="margin-bottom:12px">📋 نسخ رابط الموقع</button>';
+}
 
 async function toggleFav(team){
   if (!S.user){ toast('سجّل دخولك لحفظ فرقك المفضلة'); location.hash = '#/login'; return; }
@@ -1247,10 +1261,24 @@ document.addEventListener('click', async e => {
   else if (act === 'mode'){ S.authMode = a.dataset.m; S.authMsg = null; render(); }
   else if (act === 'fav' || act === 'unfav'){ toggleFav(a.dataset.team); }
   else if (act === 'logout'){ await signOut(auth); toast('تم تسجيل الخروج'); location.hash = '#/'; }
+  else if (act === 'copylink'){
+    const url = 'https://eleveneleven1111.app/';
+    try { await navigator.clipboard.writeText(url); toast('✓ نُسخ الرابط — الصقه في Safari أو Chrome'); }
+    catch(e){ prompt('انسخ الرابط:', url); }
+  }
   else if (act === 'google'){
+    if (IN_APP){ S.authMsg = ['inapp', '']; render(); return; }
     S.authBusy = true; S.authMsg = null; render();
-    try{ await signInWithPopup(auth, new GoogleAuthProvider()); }
-    catch(err){ S.authMsg = ['err', authErr(err)]; }
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    try{ await signInWithPopup(auth, provider); }
+    catch(err){
+      if (err && (err.code === 'auth/popup-blocked' || err.code === 'auth/operation-not-supported-in-this-environment')){
+        try { await signInWithRedirect(auth, provider); return; } catch(e2){ S.authMsg = ['err', authErr(e2)]; }
+      } else if (err && err.code !== 'auth/popup-closed-by-user' && err.code !== 'auth/cancelled-popup-request'){
+        S.authMsg = ['err', authErr(err)];
+      }
+    }
     S.authBusy = false; render();
   }
 });
@@ -1341,6 +1369,7 @@ async function recordUser(u){
 trackVisit();
 
 /* ================= المصادقة ================= */
+getRedirectResult(auth).catch(err => { if (err && err.code){ S.authMsg = ['err', authErr(err)]; if (route().name === 'login') render(); } });
 onAuthStateChanged(auth, async u => {
   S.user = u; S.authReady = true; S.favs = [];
   renderAuthUI();
