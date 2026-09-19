@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11:11 Sports — مباشر</title>
+<meta name="description" content="مواعيد المباريات، القنوات الناقلة، النتائج وجداول الترتيب لأكثر من 36 بطولة عربية وعالمية">
+<meta property="og:title" content="11:11 Sports">
+<meta property="og:description" content="المباراة والقناة والمعلّق في مكان واحد">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --bg:#0A0A0A; --card:#161616; --surface:#1F1F1F;
+  --border:#2E2E2E; --gold:#FFD700; --red:#E30613;
+  --txt:#FFFFFF; --txt2:#8A8A8A;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Tahoma,sans-serif;
+  background:var(--bg); color:var(--txt); min-height:100vh; padding-bottom:60px;
+}
+
+.promo{
+  background:linear-gradient(90deg,#FFD700,#FFB000); color:#0A0A0A;
+  padding:10px 16px; text-align:center; font-size:13px; font-weight:700;
+  position:sticky; top:0; z-index:100;
+}
+.promo a{ color:#0A0A0A; }
+
+header{ padding:26px 20px 10px; text-align:center; }
+.logo-wrap{ display:flex; align-items:center; justify-content:center; gap:6px; margin-bottom:10px; }
+.pair{ display:flex; gap:5px; }
+.bar{ width:11px; height:56px; background:var(--gold); border-radius:6px; }
+.colon{ display:flex; flex-direction:column; gap:7px; margin:0 9px; }
+.dot{ width:8px; height:8px; border-radius:50%; background:var(--red); }
+.brand{ font-size:11px; letter-spacing:6px; color:var(--gold); font-weight:700; }
+.tagline{ color:var(--txt2); font-size:13px; margin-top:8px; }
+
+.tabs{
+  display:flex; gap:8px; padding:16px; overflow-x:auto;
+  position:sticky; top:38px; background:var(--bg); z-index:90;
+  border-bottom:1px solid var(--border);
+}
+.tab{
+  padding:9px 18px; border-radius:20px; border:1px solid var(--border);
+  background:var(--card); color:var(--txt2); font-size:13.5px; font-weight:600;
+  cursor:pointer; white-space:nowrap;
+}
+.tab.on{ background:var(--gold); color:#0A0A0A; border-color:var(--gold); }
+.tab.live-tab.on{ background:var(--red); color:#fff; border-color:var(--red); }
+
+main{ max-width:760px; margin:0 auto; padding:18px 16px 40px; }
+.loading,.empty{ text-align:center; color:var(--txt2); padding:44px 0; font-size:14px; line-height:1.9; }
+
+.lg-head{
+  display:flex; align-items:center; justify-content:flex-end; gap:8px;
+  padding:14px 4px 8px; margin-top:6px;
+}
+.lg-head img{ width:22px; height:22px; object-fit:contain; background:#fff; border-radius:50%; padding:2px; }
+.lg-head span{ color:var(--gold); font-size:13.5px; font-weight:700; }
+
+.m{
+  background:var(--card); border:1px solid var(--border); border-radius:12px;
+  padding:13px; margin-bottom:8px;
+}
+.m.live{ border-color:var(--red); }
+.m-top{ display:flex; align-items:center; }
+.side{ flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; }
+.side img{ width:30px; height:30px; object-fit:contain; background:#fff; border-radius:50%; padding:3px; }
+.side b{ font-size:11.5px; font-weight:600; text-align:center; line-height:1.4; }
+.mid{ width:78px; text-align:center; }
+.score{ font-size:19px; font-weight:800; }
+.vs{ color:var(--txt2); font-size:13px; font-weight:700; letter-spacing:1px; }
+.time{ color:var(--gold); font-size:14px; font-weight:700; }
+.tag{ display:inline-block; margin-top:5px; padding:2px 9px; border-radius:10px; font-size:9.5px; font-weight:700; }
+.tag.live{ background:var(--red); color:#fff; }
+.tag.ft{ background:var(--surface); color:var(--txt2); }
+.m-foot{
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+  margin-top:11px; padding-top:9px; border-top:1px solid var(--surface);
+  font-size:10.5px; color:var(--txt2); flex-wrap:wrap;
+}
+.ch{ padding:3px 9px; border-radius:6px; font-size:9.5px; font-weight:700; color:#fff; }
+
+.scorers{ display:flex; gap:8px; margin-top:9px; padding-top:9px; border-top:1px solid var(--surface); }
+.sc-col{ flex:1; }
+.sc-col.r{ text-align:left; }
+.sc-col.l{ text-align:right; }
+.sc{ color:var(--txt2); font-size:10px; line-height:1.7; }
+
+.std{ background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:18px; }
+table{ width:100%; border-collapse:collapse; }
+th{ background:var(--surface); color:var(--txt2); font-size:10px; padding:9px 5px; font-weight:700; }
+td{ padding:9px 5px; font-size:11.5px; text-align:center; border-bottom:1px solid var(--surface); }
+tr:last-child td{ border-bottom:none; }
+.t-cell{ text-align:right !important; }
+.t-in{ display:flex; align-items:center; gap:7px; }
+.t-in img{ width:20px; height:20px; object-fit:contain; background:#fff; border-radius:50%; padding:2px; flex-shrink:0; }
+.t-in span{ font-size:11.5px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.pts{ color:var(--gold); font-weight:800; font-size:12.5px; }
+.rank{ color:var(--txt2); font-weight:700; }
+tr.top td:first-child{ box-shadow:inset 3px 0 0 var(--gold); }
+tr.bot td:first-child{ box-shadow:inset 3px 0 0 var(--red); }
+
+.picker{ display:flex; gap:7px; overflow-x:auto; padding:4px 0 16px; }
+.pick{
+  padding:7px 14px; border-radius:16px; border:1px solid var(--border);
+  background:var(--card); color:var(--txt2); font-size:12px; cursor:pointer;
+  white-space:nowrap; font-weight:600;
+}
+.pick.on{ background:var(--gold); color:#0A0A0A; border-color:var(--gold); }
+
+.date-sep{ color:var(--txt2); font-size:11px; text-align:center; margin:14px 0 8px; }
+
+footer{
+  border-top:1px solid var(--border); margin-top:50px; padding:30px 20px;
+  text-align:center; color:var(--txt2); font-size:12px; line-height:2;
+}
+footer a{ color:var(--gold); text-decoration:none; margin:0 8px; }
+.free-badge{
+  display:inline-block; background:var(--surface); border:1px solid var(--gold);
+  color:var(--gold); padding:7px 16px; border-radius:20px; font-size:12px;
+  font-weight:700; margin-bottom:16px;
+}
+</style>
+</head>
+<body>
+
+<div class="promo">
+  ⚽ حمّل تطبيق 11:11 للتذكيرات وفرقك المفضلة —
+  <a href="index.html">اعرف المزيد</a>
+</div>
+
+<header>
+  <div class="logo-wrap">
+    <div class="pair"><div class="bar"></div><div class="bar"></div></div>
+    <div class="colon"><div class="dot"></div><div class="dot"></div></div>
+    <div class="pair"><div class="bar"></div><div class="bar"></div></div>
+  </div>
+  <div class="brand">S P O R T S</div>
+  <div class="tagline">المباراة والقناة والمعلّق في مكان واحد</div>
+</header>
+
+<div class="tabs">
+  <div class="tab live-tab on" data-t="live">🔴 مباشر</div>
+  <div class="tab" data-t="today">📅 اليوم</div>
+  <div class="tab" data-t="upcoming">⏭️ القادمة</div>
+  <div class="tab" data-t="results">🏆 النتائج</div>
+  <div class="tab" data-t="standings">📊 الترتيب</div>
+</div>
+
+<main id="app"><div class="loading">جارٍ تحميل البيانات…</div></main>
+
+<footer>
+  <div class="free-badge">🎁 مجاني بالكامل — فترة ترويجية</div><br>
+  <a href="index.html">الرئيسية</a>
+  <a href="privacy.html">سياسة الخصوصية</a>
+  <a href="terms.html">شروط الاستخدام</a>
+  <a href="https://x.com/elevenelev1111">إكس</a>
+  <br><br>
+  11:11 Sports — سلطنة عُمان 🇴🇲<br>
+  جميع الحقوق محفوظة © 2026
+</footer>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyDinRUGdMj94latWozCKTjPBzssuWcnBww",
+  authDomain: "oman-sports-app.firebaseapp.com",
+  projectId: "oman-sports-app",
+  storageBucket: "oman-sports-app.firebasestorage.app",
+  messagingSenderId: "804512343700",
+  appId: "1:804512343700:web:00e27a09dd3a1251a5f681"
+});
+const db = getFirestore(app);
+
+const LEAGUES = [
+  ['gulf_cup','كأس الخليج'],['oman','دوري جندال العماني'],['saudi','دوري روشن السعودي'],
+  ['uae','دوري أدنوك للمحترفين'],['qatar','دوري جيتور القطري'],['bahrain','الدوري البحريني'],
+  ['kuwait','الدوري الكويتي'],['egypt','دوري نايل المصري'],['iraq','دوري نجوم العراق'],
+  ['england','الدوري الإنجليزي'],['spain','الدوري الإسباني'],['germany','الدوري الألماني'],
+  ['italy','الدوري الإيطالي'],['france','الدوري الفرنسي'],['netherlands','الدوري الهولندي'],
+  ['portugal','الدوري البرتغالي'],['scotland','الدوري الاسكتلندي'],
+  ['fa_cup','كأس إنجلترا'],['copa_rey','كأس إسبانيا'],['coppa','كأس إيطاليا'],
+  ['dfb','كأس ألمانيا'],['coupe_fr','كأس فرنسا'],
+  ['oman_cup','كأس السلطان'],['oman_fa','كأس الاتحاد العُماني'],['oman_sup','السوبر العُماني'],
+  ['bahrain_cup','كأس ملك البحرين'],['bahrain_fed','كأس الاتحاد البحريني'],['bahrain_sup','السوبر البحريني'],
+  ['saudi_d1','دوري يلو السعودي'],['uae_d1','الدرجة الأولى الإماراتية'],
+  ['qatar_d2','الدرجة الثانية القطرية'],['kuwait_d1','الدرجة الأولى الكويتية'],
+  ['world_cup','FIFA'],['euro','كأس أمم أوروبا'],['afcon','كأس أمم أفريقيا'],['asian_cup','كأس آسيا'],
+];
+const LNAME = Object.fromEntries(LEAGUES);
+const LORDER = LEAGUES.map(l => l[0]);
+const LOGO = {
+  gulf_cup:25, oman:406, saudi:307, uae:301, qatar:305, bahrain:417, kuwait:330,
+  egypt:233, iraq:542, england:39, spain:140, germany:78, italy:135, france:61,
+  netherlands:88, portugal:94, scotland:179, fa_cup:45, copa_rey:143, coppa:137,
+  dfb:81, coupe_fr:66, oman_cup:726, oman_fa:1197, oman_sup:944, bahrain_cup:1049,
+  bahrain_fed:485, bahrain_sup:1109, saudi_d1:308, uae_d1:303, qatar_d2:306,
+  kuwait_d1:331, world_cup:1, euro:4, afcon:6, asian_cup:7,
+};
+const lgLogo = k => LOGO[k]
+  ? 'https://media.api-sports.io/football/leagues/' + LOGO[k] + '.png' : '';
+
+const BC = {
+  england:['beIN Sports','TOD'], spain:['beIN Sports','TOD'],
+  germany:['MBC Action','شاهد'], italy:['StarzPlay','أبوظبي الرياضية'],
+  france:['beIN Sports','TOD'], netherlands:['دبي الرياضية'],
+  scotland:['الشارقة الرياضية'], portugal:['شاشا'],
+  fa_cup:['beIN Sports'], coppa:['MBC Action','شاهد'], copa_rey:['MBC Action','شاهد'],
+  dfb:['أبوظبي الرياضية'], coupe_fr:['beIN Sports','TOD'],
+  world_cup:['beIN Sports','TOD'], euro:['beIN Sports','TOD'],
+  asian_cup:['beIN Sports','TOD'], afcon:['beIN Sports'], gulf_cup:['الكاس','شوف'],
+  oman:['عمان الرياضية','تطبيق عين'], saudi:['Thmanyah'],
+  uae:['أبوظبي الرياضية','دبي الرياضية'], qatar:['الكاس'],
+  bahrain:['البحرين الرياضية'], kuwait:['الكويت الرياضية'],
+  egypt:['أون تايم الرياضية'], iraq:['العراقية الرياضية'],
+  oman_cup:['عمان الرياضية'], oman_fa:['عمان الرياضية'], oman_sup:['عمان الرياضية'],
+  bahrain_cup:['البحرين الرياضية'], bahrain_fed:['البحرين الرياضية'],
+  bahrain_sup:['البحرين الرياضية'], saudi_d1:['Thmanyah'],
+  uae_d1:['أبوظبي الرياضية'], qatar_d2:['الكاس'], kuwait_d1:['الكويت الرياضية'],
+};
+const CC = {
+  'beIN Sports':'#5B2C91','TOD':'#B8860B','MBC Action':'#B8860B','StarzPlay':'#6A6A6A',
+  'أبوظبي الرياضية':'#8B6914','شاشا':'#0B63CE','عمان الرياضية':'#0057B8','تطبيق عين':'#E91E8C',
+  'شاهد':'#00A651','الشارقة الرياضية':'#D71920','الكاس':'#7A0019','دبي الرياضية':'#C8102E',
+  'البحرين الرياضية':'#CE1126','الكويت الرياضية':'#6B0F1A','أون تايم الرياضية':'#1E7A3C',
+  'Thmanyah':'#3E6B27','العراقية الرياضية':'#1B5E20','شوف':'#7A0019',
+};
+const MONTHS = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const oman = d => new Date(new Date(d).getTime() + 4*3600*1000);
+const p2 = n => String(n).padStart(2,'0');
+const hhmm = d => { const x = oman(d); return p2(x.getUTCHours())+':'+p2(x.getUTCMinutes()); };
+const dkey = d => { const x = oman(d); return x.getUTCFullYear()+'-'+(x.getUTCMonth()+1)+'-'+x.getUTCDate(); };
+const dlabel = d => { const x = oman(d); return x.getUTCDate()+' '+MONTHS[x.getUTCMonth()]+' '+x.getUTCFullYear(); };
+const chans = m => (m.channels && m.channels.length) ? m.channels : (BC[m.leagueKey] || []);
+
+let DATA = { live:[], up:[], done:[], std:{} };
+let tab = 'live', stdKey = null;
+
+async function load(){
+  const [l,u,mm,st] = await Promise.all([
+    getDocs(collection(db,'live')),
+    getDocs(collection(db,'upcoming')),
+    getDocs(collection(db,'matches')),
+    getDocs(collection(db,'standings')),
+  ]);
+  DATA.live = l.docs.map(d=>({id:d.id,...d.data()}));
+  DATA.up   = u.docs.map(d=>({id:d.id,...d.data()}));
+  DATA.done = mm.docs.map(d=>({id:d.id,...d.data()}));
+  DATA.std  = {};
+  st.docs.forEach(d=>{ DATA.std[d.id] = d.data().rows || []; });
+  render();
+}
+
+function card(m){
+  const lv = DATA.live.find(x => String(x.fixtureId) === String(m.fixtureId));
+  const ft = m.status === 'FT';
+  const hg = lv ? lv.homeGoals : m.homeGoals;
+  const ag = lv ? lv.awayGoals : m.awayGoals;
+  const ch = chans(m);
+  const c0 = ch[0] || '';
+
+  let mid;
+  if (lv) mid = '<div class="score">'+ag+' - '+hg+'</div>'
+    + '<span class="tag live">'+(lv.elapsed ? lv.elapsed+"'" : 'مباشر')+'</span>';
+  else if (ft) mid = '<div class="score">'+ag+' - '+hg+'</div>'
+    + '<span class="tag ft">انتهت</span>';
+  else mid = '<div class="vs">VS</div><div class="time">'+hhmm(m.date)+'</div>';
+
+  const evs = (m.events || []).filter(e => e.category !== 'card');
+  const aw = evs.filter(e => e.team === m.awayTeam);
+  const hm = evs.filter(e => e.team === m.homeTeam);
+  const line = e => '⚽ '+esc(e.player)+' '+esc(e.minute)+"'"+(e.varDetail ? ' (VAR)' : '');
+  const scorers = evs.length
+    ? '<div class="scorers">'
+      + '<div class="sc-col l">'+aw.map(e=>'<div class="sc">'+line(e)+'</div>').join('')+'</div>'
+      + '<div class="sc-col r">'+hm.map(e=>'<div class="sc">'+line(e)+'</div>').join('')+'</div>'
+      + '</div>'
+    : '';
+
+  const comm = m.commentator1 ? '<span>🎙️ '+esc(m.commentator1)+'</span>' : '<span></span>';
+  const foot = (c0 || m.commentator1)
+    ? '<div class="m-foot">'
+      + (c0 ? '<span class="ch" style="background:'+(CC[c0]||'#333')+'">'+esc(c0)+'</span>' : '<span></span>')
+      + comm + '</div>'
+    : '';
+
+  return '<div class="m '+(lv?'live':'')+'">'
+    + '<div class="m-top">'
+    + '<div class="side"><img src="'+esc(m.awayLogo)+'" alt="" onerror="this.style.visibility=\'hidden\'"><b>'+esc(m.awayTeam)+'</b></div>'
+    + '<div class="mid">'+mid+'</div>'
+    + '<div class="side"><img src="'+esc(m.homeLogo)+'" alt="" onerror="this.style.visibility=\'hidden\'"><b>'+esc(m.homeTeam)+'</b></div>'
+    + '</div>' + foot + scorers + '</div>';
+}
+
+function byLeague(list){
+  const g = {};
+  list.forEach(m => { (g[m.leagueKey] = g[m.leagueKey] || []).push(m); });
+  return LORDER.filter(k => g[k]).map(k => ({ key:k, items:g[k] }));
+}
+
+function lgHead(k){
+  const lo = lgLogo(k);
+  return '<div class="lg-head"><span>'+esc(LNAME[k] || k)+'</span>'
+    + (lo ? '<img src="'+lo+'" alt="" onerror="this.style.visibility=\'hidden\'">' : '')
+    + '</div>';
+}
+
+function render(){
+  const el = document.getElementById('app');
+  const now = Date.now();
+
+  if (tab === 'live'){
+    if (!DATA.live.length){
+      el.innerHTML = '<div class="empty">لا توجد مباريات مباشرة الآن<br><br>'
+        + 'تابع تبويب <b style="color:var(--gold)">اليوم</b> لمعرفة مباريات اليوم</div>';
+      return;
+    }
+    el.innerHTML = byLeague(DATA.live)
+      .map(g => lgHead(g.key) + g.items.map(card).join('')).join('');
+    return;
+  }
+
+  if (tab === 'today'){
+    const tk = dkey(new Date().toISOString());
+    const seen = new Set(); const all = [];
+    DATA.done.concat(DATA.up).forEach(m => {
+      if (dkey(m.date) !== tk) return;
+      const id = String(m.fixtureId || m.id);
+      if (seen.has(id)) return;
+      seen.add(id); all.push(m);
+    });
+    all.sort((a,b) => new Date(a.date) - new Date(b.date));
+    el.innerHTML = all.length
+      ? byLeague(all).map(g => lgHead(g.key) + g.items.map(card).join('')).join('')
+      : '<div class="empty">لا توجد مباريات اليوم</div>';
+    return;
+  }
+
+  if (tab === 'upcoming'){
+    const up = DATA.up.filter(m => new Date(m.date).getTime() > now)
+      .sort((a,b) => new Date(a.date) - new Date(b.date));
+    if (!up.length){ el.innerHTML = '<div class="empty">لا توجد مباريات قادمة</div>'; return; }
+    const g = {};
+    up.forEach(m => { (g[dkey(m.date)] = g[dkey(m.date)] || []).push(m); });
+    el.innerHTML = Object.keys(g).map(k =>
+      '<div class="date-sep">'+dlabel(g[k][0].date)+'</div>'
+      + byLeague(g[k]).map(x => lgHead(x.key) + x.items.map(card).join('')).join('')
+    ).join('');
+    return;
+  }
+
+  if (tab === 'results'){
+    if (!DATA.done.length){ el.innerHTML = '<div class="empty">لا توجد نتائج</div>'; return; }
+    el.innerHTML = byLeague(DATA.done).map(g => {
+      const items = g.items.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+      return lgHead(g.key)
+        + '<div class="date-sep">'+dlabel(items[0].date)+'</div>'
+        + items.slice(0,8).map(card).join('');
+    }).join('');
+    return;
+  }
+
+  if (tab === 'standings'){
+    const keys = LORDER.filter(k => (DATA.std[k] || []).length);
+    if (!keys.length){ el.innerHTML = '<div class="empty">جداول الترتيب غير متاحة حالياً</div>'; return; }
+    if (!stdKey || keys.indexOf(stdKey) === -1) stdKey = keys[0];
+    const rows = DATA.std[stdKey];
+
+    el.innerHTML = '<div class="picker">'
+      + keys.map(k => '<div class="pick '+(k===stdKey?'on':'')+'" data-k="'+k+'">'+esc(LNAME[k]||k)+'</div>').join('')
+      + '</div><div class="std"><table>'
+      + '<tr><th>#</th><th class="t-cell">الفريق</th><th>لعب</th><th>ف</th><th>ت</th><th>خ</th><th>+/-</th><th>ن</th></tr>'
+      + rows.map((r,i) =>
+          '<tr class="'+(i<4?'top':'')+' '+(i>=rows.length-3&&rows.length>6?'bot':'')+'">'
+          + '<td class="rank">'+r.rank+'</td>'
+          + '<td class="t-cell"><div class="t-in">'
+          + '<img src="'+esc(r.logo)+'" alt="" onerror="this.style.visibility=\'hidden\'">'
+          + '<span>'+esc(r.team)+'</span></div></td>'
+          + '<td>'+r.played+'</td><td>'+r.win+'</td><td>'+r.draw+'</td><td>'+r.lose+'</td>'
+          + '<td>'+(r.gd > 0 ? '+'+r.gd : r.gd)+'</td><td class="pts">'+r.points+'</td></tr>'
+        ).join('')
+      + '</table></div>';
+
+    Array.prototype.forEach.call(el.querySelectorAll('.pick'), p => {
+      p.onclick = () => { stdKey = p.dataset.k; render(); window.scrollTo({top:200,behavior:'smooth'}); };
+    });
+  }
+}
+
+Array.prototype.forEach.call(document.querySelectorAll('.tab'), t => {
+  t.onclick = () => {
+    Array.prototype.forEach.call(document.querySelectorAll('.tab'), x => x.classList.remove('on'));
+    t.classList.add('on');
+    tab = t.dataset.t;
+    render();
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+load().catch(e => {
+  document.getElementById('app').innerHTML =
+    '<div class="empty">تعذّر تحميل البيانات<br><small style="opacity:.6">'+esc(e.message)+'</small></div>';
+});
+
+setInterval(() => load().catch(()=>{}), 120000);
+</script>
+</body>
+</html>
