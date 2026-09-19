@@ -263,6 +263,17 @@ tr.bot td:first-child{box-shadow:inset -3px 0 0 var(--red)}
 .doc .poster span{background:rgba(0,0,0,.7);font-size:11px;padding:3px 8px;margin:8px;border-radius:6px}
 .doc b{display:block;font-size:12.5px;padding:9px 10px;line-height:1.5}
 
+/* ---------- دعوة التسجيل ---------- */
+.lock-cta{display:flex;flex-direction:column;gap:4px;background:rgba(255,215,0,.06);border:1px dashed rgba(255,215,0,.45);border-radius:12px;padding:12px 14px}
+.lock-cta b{font-size:13.5px;color:var(--txt)}
+.lock-cta span{font-size:12.5px;color:var(--gold);font-weight:700}
+.join-box{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c1700,#141414 65%);border:1px solid rgba(255,215,0,.35);border-radius:18px;padding:16px;margin:18px 0 6px;flex-wrap:wrap}
+.join-ic{font-size:30px}
+.join-txt{flex:1;min-width:200px}
+.join-txt b{display:block;font-size:15px;margin-bottom:4px}
+.join-txt span{color:var(--txt2);font-size:12.5px;line-height:1.7}
+.join-box .btn{padding:11px 22px}
+
 /* ---------- الاشتراك ---------- */
 .plans{display:grid;gap:14px}
 @media (min-width:860px){.plans{grid-template-columns:repeat(3,1fr)}}
@@ -360,7 +371,7 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding:32px 16px 28px
     </div>
   </div>
 </header>
-<div class="promo-strip">🎁 جميع المزايا مجانية على الموقع خلال الفترة الترويجية — <a href="#/plans">اعرف الباقات</a></div>
+<div class="promo-strip" id="promoStrip">🎁 سجّل مجاناً وافتح القنوات والمعلّقين والترددات — <a href="#/login?m=register">سجّل الآن</a></div>
 
 <div class="drawer-bg" id="drawerBg"></div>
 <aside class="drawer" id="drawer">
@@ -440,8 +451,9 @@ const auth = getAuth(app);
 auth.languageCode = 'ar';
 
 /* ================= الإعدادات =================
-   PROMO = true  → كل المزايا مفتوحة للجميع على الموقع (الفترة الترويجية)
-   PROMO = false → الزائر: المواعيد والنتائج فقط | العضو: + القنوات والمفضلة | الباقي للمشتركين في التطبيق */
+   الزائر (بدون حساب): المواعيد، النتائج، الترتيب، الأخبار العامة فقط
+   PROMO = true  → العضو المسجّل مجاناً يحصل على كل مزايا المميزة (الفترة الترويجية)
+   PROMO = false → العضو: القنوات والمفضلة فقط | الباقي للمشتركين في التطبيق */
 const PROMO = true;
 
 /* ================= البيانات الثابتة ================= */
@@ -579,14 +591,23 @@ const isFT = m => ['FT','AET','PEN'].includes(m.status);
 
 /* الوصول حسب الباقة */
 function can(feature){
-  if (PROMO) return true;
-  if (feature === 'channels' || feature === 'favorites') return !!S.user;
-  return false; // commentators / freq / events / exclusive → في التطبيق للمشتركين
+  if (!S.user) return false;               // الزائر: لا قنوات ولا معلّقين ولا ترددات ولا أحداث
+  if (PROMO) return true;                  // العضو خلال الفترة الترويجية: كل شيء
+  return feature === 'channels' || feature === 'favorites';
 }
-function lockMsg(feature){
-  if (!S.user && (feature === 'channels' || feature === 'favorites'))
-    return '<a href="#/login" class="lock">🔒 سجّل دخولك مجاناً لعرضها</a>';
+const LOCK_LBL = { channels:'القنوات الناقلة', commentators:'أسماء المعلّقين', freq:'الترددات', events:'الأهداف والبطاقات', exclusive:'الخبر الحصري', favorites:'المفضلة' };
+function lockMsg(feature, short){
+  if (!S.user){
+    if (short) return '<span class="lock">🔒 '+(LOCK_LBL[feature]||'')+' للأعضاء</span>';
+    return '<a href="#/login?m=register" class="lock-cta"><b>🔒 '+(LOCK_LBL[feature]||'هذه الميزة')+' متاحة للأعضاء</b><span>سجّل مجاناً في ثوانٍ بحساب جوجل ›</span></a>';
+  }
   return '<a href="#/plans" class="lock">💎 متاحة للمشتركين</a>';
+}
+function joinBox(){
+  if (S.user) return '';
+  return '<div class="join-box"><div class="join-ic">🎁</div><div class="join-txt"><b>سجّل مجاناً وافتح كل المزايا</b>'
+    + '<span>القنوات الناقلة · المعلّقون · الترددات · الأهداف والبطاقات · فرقك المفضلة</span></div>'
+    + '<a class="btn btn-gold" href="#/login?m=register">سجّل مجاناً</a></div>';
 }
 
 function toast(t){
@@ -641,8 +662,8 @@ function card(m, opts = {}){
   if (!opts.noFoot && (ch.length || m.commentator1)){
     const chHTML = can('channels')
       ? ch.slice(0,3).map(c => '<span class="ch" style="background:'+(CC[c]||'#333')+'">'+esc(c)+'</span>').join('')
-      : lockMsg('channels');
-    const cm = m.commentator1 ? (can('commentators') ? '<span class="comm">🎙️ '+esc(m.commentator1)+'</span>' : '') : '';
+      : lockMsg('channels', true);
+    const cm = m.commentator1 ? (can('commentators') ? '<span class="comm">🎙️ '+esc(m.commentator1)+'</span>' : '<span class="comm">🎙️ المعلّق 🔒</span>') : '';
     foot = '<div class="m-foot">' + chHTML + cm + '</div>';
   }
 
@@ -729,6 +750,7 @@ V.home = () => {
     + '<div class="stat"><b style="color:var(--red)">'+(S.loaded ? live.length : '—')+'</b><span>مباشر الآن</span></div></div>'
     + '</section>';
 
+  h += joinBox();
   if (!S.loaded) return h + spinner();
 
   if (live.length){
@@ -786,7 +808,7 @@ V.matches = (sub) => {
     + '<div class="tabs">' + tabs.map(([k,l]) => '<a class="tab'+(k==='live'?' live-t':'')+(S.mTab===k?' on':'')+'" href="#/matches/'+k+'">'+l+(k==='live'&&S.live.length?' ('+S.live.length+')':'')+'</a>').join('') + '</div>'
     + '<div class="filters"><select class="sel" data-change="league" aria-label="البطولة"><option value="all">كل البطولات</option>'
     + present.map(k => '<option value="'+k+'"'+(k===S.mLeague?' selected':'')+'>'+esc(LNAME[k])+'</option>').join('')
-    + '</select>' + tzSelect() + '</div>';
+    + '</select>' + tzSelect() + '</div>' + joinBox();
 
   if (!S.loaded) return h + spinner() + '</div>';
 
@@ -1060,18 +1082,21 @@ V.plans = () => {
     ? '<span class="btn btn-dark btn-block">✓ أنت مسجّل</span>'
     : '<a class="btn btn-line btn-block" href="#/login?m=register">أنشئ حساباً مجاناً</a>';
   return '<h1 class="page-title">الباقات والاشتراك</h1><div class="page-sub">اختر ما يناسبك — ابدأ مجاناً وانتقل للمميزة متى شئت.</div>'
-    + (PROMO ? '<div class="note" style="margin-bottom:20px">🎁 <b>فترة ترويجية:</b> جميع مزايا الباقة المميزة متاحة لك الآن <b>مجاناً على الموقع</b> — المعلّقون، الترددات، الأخبار الحصرية وتفاصيل المباريات. بعد انتهاء الفترة الترويجية تبقى الباقة المميزة متاحة عبر التطبيق.</div>' : '')
+    + (PROMO ? '<div class="note" style="margin-bottom:20px">🎁 <b>عرض الفترة الترويجية:</b> سجّل حساباً <b>مجانياً</b> واحصل على كل مزايا الباقة المميزة على الموقع — القنوات، المعلّقون، الترددات، الأخبار الحصرية وتفاصيل المباريات. العرض لفترة محدودة، وبعدها تبقى المميزة متاحة عبر التطبيق.</div>' : '')
     + '<div class="plans">'
     + '<div class="plan"><h3>زائر</h3><div class="desc">تصفّح بدون حساب</div><div class="price">مجاناً</div>'
     + '<ul class="feats">'+f('مواعيد جميع المباريات')+f('النتائج وجداول الترتيب')+f('الأخبار العامة')+f('القنوات الناقلة',false)+f('الفرق المفضلة',false)+f('أسماء المعلّقين',false)+'</ul>'
     + '<a class="btn btn-dark btn-block" href="#/matches">تصفّح المباريات</a></div>'
     + '<div class="plan"><h3>عضو</h3><div class="desc">حساب مجاني بالبريد أو جوجل</div><div class="price">مجاناً</div>'
-    + '<ul class="feats">'+f('كل مزايا الزائر')+f('القنوات الناقلة لكل مباراة')+f('فرقك المفضلة على الموقع والتطبيق')+f('أسماء المعلّقين',false)+f('الترددات والأخبار الحصرية',false)+f('التذكيرات قبل المباراة',false)+'</ul>'
+    + '<ul class="feats">'+f('كل مزايا الزائر')+f('القنوات الناقلة لكل مباراة')+f('فرقك المفضلة على الموقع والتطبيق')
+    + (PROMO ? f('🎁 أسماء المعلّقين — مجاناً خلال العرض')+f('🎁 الترددات والأهداف والأخبار الحصرية — مجاناً خلال العرض')
+             : f('أسماء المعلّقين',false)+f('الترددات والأخبار الحصرية',false))
+    + f('التذكيرات قبل المباراة (التطبيق)',false)+'</ul>'
     + memberBtn + '</div>'
     + '<div class="plan best"><span class="ribbon">الأكثر قيمة</span><h3>💎 المميزة</h3><div class="desc">كل شيء بلا حدود</div>'
     + '<div class="price">$2.99 <small>/ شهرياً</small></div><div class="price-alt">أو $19.99 سنوياً — وفّر 44% · تجربة مجانية 7 أيام</div>'
     + '<ul class="feats">'+f('كل مزايا العضو')+f('أسماء المعلّقين لكل مباراة')+f('ترددات القنوات والأقمار')+f('تفاصيل الأهداف والبطاقات')+f('الأخبار الحصرية')+f('تذكيرات قبل المباراة (التطبيق)')+f('البث المباشر (التطبيق)')+'</ul>'
-    + (PROMO ? '<span class="btn btn-gold btn-block">🎁 مفعّلة لك مجاناً على الموقع</span>' : '<span class="btn btn-gold btn-block" aria-disabled="true">اشترك عبر التطبيق — قريباً</span>')
+    + (PROMO ? (S.user ? '<span class="btn btn-gold btn-block">🎁 مفعّلة لك مجاناً على الموقع</span>' : '<a class="btn btn-gold btn-block" href="#/login?m=register">🎁 سجّل مجاناً واحصل عليها</a>') : '<span class="btn btn-gold btn-block" aria-disabled="true">اشترك عبر التطبيق — قريباً</span>')
     + '</div></div>'
     + '<section class="sec faq"><div class="sec-head"><h2>أسئلة شائعة</h2></div>'
     + '<details><summary>كيف أدفع الاشتراك؟</summary><p>يتم الاشتراك والدفع من داخل تطبيق 11:11 عبر متجر Google Play أو App Store، ويمكنك إلغاؤه في أي وقت من إعدادات المتجر.</p></details>'
@@ -1176,6 +1201,9 @@ function renderAuthUI(){
     ? '<div class="avatar">'+esc(initial(u))+'</div><div><b>'+esc(u.displayName || 'مستخدم 11:11')+'</b><small>'+(PROMO?'💎 مميزة — ترويجي':'عضو')+'</small></div>'
     : '<div class="avatar" style="background:var(--surface);color:var(--txt2)">👤</div><div><b>زائر</b><small><a href="#/login" style="color:var(--gold)">سجّل دخولك</a></small></div>';
   $('bottomAccTxt').textContent = u ? 'حسابي' : 'دخول';
+  $('promoStrip').innerHTML = u
+    ? '🎁 حسابك يفتح لك كل مزايا المميزة مجاناً خلال الفترة الترويجية'
+    : '🎁 سجّل مجاناً وافتح القنوات والمعلّقين والترددات — <a href="#/login?m=register">سجّل الآن</a>';
   $('drawerAcc').lastChild.textContent = u ? 'حسابي' : 'تسجيل الدخول';
 }
 
