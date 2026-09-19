@@ -2,232 +2,1318 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>11:11 Sports — المباراة والقناة والمعلّق في مكان واحد</title>
-<meta name="description" content="مواعيد المباريات، القنوات الناقلة، أسماء المعلّقين، جداول الترتيب والنتائج لأكثر من 36 بطولة عربية وعالمية">
+<meta name="description" content="مواعيد المباريات، القنوات الناقلة، أسماء المعلّقين، النتائج وجداول الترتيب لأكثر من 36 بطولة عربية وعالمية">
+<meta property="og:title" content="11:11 Sports">
+<meta property="og:description" content="المباراة والقناة والمعلّق في مكان واحد">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0A'/%3E%3Crect x='9' y='14' width='6' height='36' rx='3' fill='%23FFD700'/%3E%3Crect x='18' y='14' width='6' height='36' rx='3' fill='%23FFD700'/%3E%3Ccircle cx='32' cy='25' r='3.5' fill='%23E30613'/%3E%3Ccircle cx='32' cy='39' r='3.5' fill='%23E30613'/%3E%3Crect x='40' y='14' width='6' height='36' rx='3' fill='%23FFD700'/%3E%3Crect x='49' y='14' width='6' height='36' rx='3' fill='%23FFD700'/%3E%3C/svg%3E">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Tahoma, sans-serif;
-    background: #0A0A0A;
-    color: #FFFFFF;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-  }
-  .logo-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 20px;
-  }
-  .pair { display: flex; gap: 7px; }
-  .bar {
-    width: 16px; height: 92px;
-    background: #FFD700;
-    border-radius: 8px;
-  }
-  .colon { display: flex; flex-direction: column; gap: 10px; margin: 0 14px; }
-  .dot { width: 11px; height: 11px; border-radius: 50%; background: #E30613; }
-  h1 {
-    font-size: 15px;
-    letter-spacing: 8px;
-    color: #FFD700;
-    margin-bottom: 50px;
-    font-weight: 700;
-  }
-  .tagline {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    max-width: 520px;
-    line-height: 1.6;
-    margin-bottom: 14px;
-  }
-  .sub {
-    color: #A8A8A8;
-    text-align: center;
-    max-width: 500px;
-    line-height: 1.9;
-    margin-bottom: 30px;
-    font-size: 15px;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0A0A;--card:#141414;--card2:#1B1B1B;--surface:#232323;
+  --border:#2A2A2A;--gold:#FFD700;--gold2:#E0B800;--red:#E30613;
+  --txt:#FFFFFF;--txt2:#9A9A9A;--txt3:#6B6B70;--green:#2ECC71;
+  --top-h:60px;--bot-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;padding-bottom:calc(var(--bot-h) + env(safe-area-inset-bottom))}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select{font-family:inherit}
+img{display:block}
 
-  .cta {
-    display: inline-block;
-    background: #FFD700;
-    color: #0A0A0A;
-    font-weight: bold;
-    font-size: 17px;
-    text-decoration: none;
-    padding: 16px 38px;
-    border-radius: 30px;
-    margin-bottom: 12px;
-    box-shadow: 0 0 24px rgba(255,215,0,0.35);
-    transition: 0.2s;
-  }
-  .cta:hover { transform: scale(1.04); }
-  .cta-note { color: #8A8A8A; font-size: 13px; margin-bottom: 55px; text-align: center; }
+/* ---------- الشريط العلوي ---------- */
+.top{position:sticky;top:0;z-index:200;background:rgba(10,10,10,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.top-in{max-width:1180px;margin:0 auto;height:var(--top-h);display:flex;align-items:center;gap:18px;padding:0 16px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.mini-logo{display:flex;align-items:center;gap:3px}
+.mini-logo i{display:block;width:5px;height:24px;background:var(--gold);border-radius:3px}
+.mini-logo b{display:flex;flex-direction:column;gap:5px;margin:0 3px}
+.mini-logo b s{display:block;width:4px;height:4px;border-radius:50%;background:var(--red)}
+.brand-txt{font-size:11px;letter-spacing:3.5px;color:var(--gold);font-weight:800}
+.nav{display:none;align-items:center;gap:4px;flex:1}
+.nav a{padding:8px 13px;border-radius:10px;font-size:14px;font-weight:600;color:var(--txt2);white-space:nowrap;transition:.15s}
+.nav a:hover{color:var(--txt);background:var(--card)}
+.nav a.on{color:var(--gold);background:var(--card)}
+.nav a.live-link{color:var(--red)}
+.nav a.live-link.on{background:rgba(227,6,19,.12)}
+.top-actions{display:flex;align-items:center;gap:8px;margin-right:auto}
+.btn-login{padding:8px 16px;border-radius:20px;background:var(--gold);color:#0A0A0A;font-size:13px;font-weight:800;white-space:nowrap}
+.user-chip{display:flex;align-items:center;gap:8px;padding:4px 4px 4px 12px;border-radius:22px;background:var(--card);border:1px solid var(--border);font-size:13px;font-weight:600;max-width:170px}
+.user-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.avatar{width:30px;height:30px;border-radius:50%;background:var(--gold);color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0}
+.burger{width:40px;height:40px;border-radius:10px;background:var(--card);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.burger i{display:block;width:17px;height:2px;background:var(--txt);border-radius:2px}
+.promo-strip{background:linear-gradient(90deg,#FFD700,#FFB000);color:#0A0A0A;text-align:center;font-size:12.5px;font-weight:800;padding:8px 14px}
+.promo-strip a{text-decoration:underline}
 
-  .section-title {
-    color: #FFD700;
-    font-size: 13px;
-    letter-spacing: 3px;
-    margin-bottom: 22px;
-    font-weight: 700;
-  }
+/* ---------- القائمة الجانبية ---------- */
+.drawer-bg{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;opacity:0;pointer-events:none;transition:.2s}
+.drawer{position:fixed;top:0;bottom:0;right:0;width:290px;max-width:84vw;background:#0F0F0F;border-left:1px solid var(--border);z-index:310;transform:translateX(100%);transition:.25s;display:flex;flex-direction:column;overflow-y:auto}
+body.menu-open .drawer-bg{opacity:1;pointer-events:auto}
+body.menu-open .drawer{transform:none}
+.drawer-head{padding:22px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+.drawer-head .avatar{width:44px;height:44px;font-size:19px}
+.drawer-head small{display:block;color:var(--txt2);font-size:12px;margin-top:3px}
+.drawer-links{padding:10px 8px;flex:1}
+.drawer-links a{display:flex;align-items:center;gap:12px;padding:13px 12px;border-radius:12px;font-size:15px;font-weight:600;color:#E0E0E0}
+.drawer-links a:hover,.drawer-links a.on{background:var(--card);color:var(--gold)}
+.drawer-links a .ic{width:24px;text-align:center;font-size:17px}
+.drawer-links hr{border:none;border-top:1px solid var(--border);margin:8px 10px}
+.drawer-foot{padding:16px 18px;border-top:1px solid var(--border);color:var(--txt3);font-size:11.5px}
 
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    max-width: 680px;
-    margin-bottom: 55px;
-  }
-  .feature {
-    background: #161616;
-    border: 1px solid #2E2E2E;
-    border-radius: 12px;
-    padding: 14px 20px;
-    font-size: 14px;
-    color: #E0E0E0;
-    transition: 0.2s;
-  }
-  .feature:hover { border-color: #FFD700; }
-  .feature.premium { border-color: #3A3005; background: #14120A; }
+/* ---------- الشريط السفلي (جوال) ---------- */
+.bottom{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(12,12,12,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--border);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+.bottom a{flex:1;height:var(--bot-h);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--txt3);font-size:10.5px;font-weight:600;position:relative}
+.bottom a svg{width:23px;height:23px}
+.bottom a.on{color:var(--gold)}
+.bottom a.live-b{color:var(--red)}
+.bottom a.live-b.on{color:var(--red)}
+.bottom a.live-b.on span{font-weight:800}
+.live-dot{position:absolute;top:10px;left:calc(50% - 16px);width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(227,6,19,.25);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(227,6,19,0)}}
 
-  .leagues {
-    max-width: 700px;
-    text-align: center;
-    color: #8A8A8A;
-    font-size: 13.5px;
-    line-height: 2.1;
-    margin-bottom: 55px;
-  }
-  .leagues b { color: #E0E0E0; font-weight: 600; }
+@media (min-width:900px){
+  .nav{display:flex}
+  .burger{display:none}
+  .bottom{display:none}
+  body{padding-bottom:0}
+}
 
-  .plans {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 700px;
-    margin-bottom: 60px;
-  }
-  .plan {
-    background: #161616;
-    border: 1px solid #2E2E2E;
-    border-radius: 16px;
-    padding: 22px 26px;
-    min-width: 190px;
-    text-align: center;
-  }
-  .plan.best { border-color: #FFD700; }
-  .plan-name { font-size: 15px; font-weight: bold; margin-bottom: 8px; }
-  .plan-price { color: #FFD700; font-size: 26px; font-weight: bold; }
-  .plan-per { color: #8A8A8A; font-size: 12px; margin-top: 4px; }
+/* ---------- عام ---------- */
+main{max-width:1180px;margin:0 auto;padding:18px 16px 40px;min-height:60vh}
+.wrap{max-width:780px;margin:0 auto}
+.page-title{font-size:22px;font-weight:800;margin:6px 0 4px}
+.page-sub{color:var(--txt2);font-size:13.5px;margin-bottom:18px;line-height:1.8}
+.sec{margin-top:30px}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.sec-head h2{font-size:17px;font-weight:800;display:flex;align-items:center;gap:8px}
+.sec-head a{color:var(--gold);font-size:13px;font-weight:700}
+.loading,.empty{text-align:center;color:var(--txt2);padding:46px 16px;font-size:14px;line-height:1.9}
+.spinner{width:30px;height:30px;border:3px solid var(--surface);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:26px;font-size:14.5px;font-weight:800;transition:.15s}
+.btn-gold{background:var(--gold);color:#0A0A0A}
+.btn-gold:hover{background:#FFE34D}
+.btn-line{border:1px solid var(--gold);color:var(--gold)}
+.btn-line:hover{background:rgba(255,215,0,.08)}
+.btn-dark{background:var(--card2);border:1px solid var(--border);color:var(--txt)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btn-block{width:100%}
+.badge{display:inline-block;padding:3px 10px;border-radius:10px;font-size:10.5px;font-weight:800}
+.b-gold{background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.35)}
+.b-red{background:var(--red);color:#fff}
+.b-grey{background:var(--surface);color:var(--txt2)}
+.promo-tag{font-size:10px;color:var(--gold);font-weight:700}
 
-  .links {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  a.btn {
-    color: #FFD700;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 12px 24px;
-    border: 1px solid #FFD700;
-    border-radius: 24px;
-    transition: 0.2s;
-  }
-  a.btn:hover { background: #FFD700; color: #0A0A0A; }
+/* ---------- البطل ---------- */
+.hero{text-align:center;padding:34px 10px 26px;background:radial-gradient(ellipse at top,rgba(255,215,0,.10),transparent 65%);border-radius:24px}
+.big-logo{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:12px}
+.big-logo .pair{display:flex;gap:6px}
+.big-logo i{display:block;width:13px;height:70px;background:var(--gold);border-radius:7px}
+.big-logo b{display:flex;flex-direction:column;gap:9px;margin:0 11px}
+.big-logo b s{display:block;width:10px;height:10px;border-radius:50%;background:var(--red)}
+.hero .sport{font-size:12px;letter-spacing:7px;color:var(--gold);font-weight:800;margin-bottom:22px}
+.hero h1{font-size:25px;font-weight:800;line-height:1.5;margin-bottom:10px}
+.hero p{color:var(--txt2);font-size:14.5px;line-height:1.9;max-width:520px;margin:0 auto 24px}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stats{display:flex;justify-content:center;gap:10px;margin-top:26px;flex-wrap:wrap}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 18px;min-width:96px}
+.stat b{display:block;color:var(--gold);font-size:20px;font-weight:800}
+.stat span{color:var(--txt2);font-size:11.5px}
 
-  footer {
-    margin-top: 80px;
-    color: #6B6B70;
-    font-size: 12px;
-    text-align: center;
-    line-height: 1.9;
-  }
+/* ---------- التبويبات والفلاتر ---------- */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:9px 17px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--txt2);font-size:13.5px;font-weight:700;white-space:nowrap}
+.tab.on{background:var(--gold);color:#0A0A0A;border-color:var(--gold)}
+.tab.live-t.on{background:var(--red);border-color:var(--red);color:#fff}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.sel{appearance:none;-webkit-appearance:none;background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A9A9A' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") no-repeat left 12px center;border:1px solid var(--border);color:var(--txt);border-radius:12px;padding:10px 14px 10px 34px;font-size:13px;font-weight:600;min-width:140px}
+
+/* ---------- بطاقة المباراة ---------- */
+.lg-head{display:flex;align-items:center;gap:9px;padding:16px 2px 9px}
+.lg-head img{width:24px;height:24px;object-fit:contain;background:#fff;border-radius:50%;padding:2px}
+.lg-head span{color:var(--gold);font-size:14px;font-weight:800}
+.lg-head small{color:var(--txt3);font-size:11.5px;margin-right:auto}
+.m{display:block;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px 12px;margin-bottom:8px;transition:.15s}
+.m:hover{border-color:#444}
+.m.is-live{border-color:rgba(227,6,19,.7)}
+.m-row{display:flex;align-items:center}
+.side{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.logo-c{width:34px;height:34px;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
+.side b{font-size:12px;font-weight:700;text-align:center;line-height:1.35;max-width:100%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.side .fav{color:var(--gold);font-size:11px}
+.mid{width:92px;text-align:center;flex-shrink:0}
+.score{display:flex;justify-content:center;align-items:center;gap:7px;font-size:21px;font-weight:800}
+.score i{font-style:normal;color:var(--txt3);font-size:15px}
+.vs{color:var(--txt3);font-size:11px;font-weight:800;letter-spacing:1px}
+.time{color:var(--gold);font-size:16px;font-weight:800;margin-top:2px}
+.mid .badge{margin-top:5px}
+.m-foot{display:flex;align-items:center;gap:6px;margin-top:11px;padding-top:9px;border-top:1px solid var(--card2);flex-wrap:wrap;font-size:11px;color:var(--txt2)}
+.ch{display:inline-flex;align-items:center;padding:3px 9px;border-radius:7px;font-size:10.5px;font-weight:800;color:#fff;white-space:nowrap}
+.comm{margin-right:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48%}
+.lock{color:var(--txt3);font-size:11px}
+.scorers{display:flex;gap:10px;margin-top:9px;padding-top:8px;border-top:1px solid var(--card2)}
+.scorers div{flex:1}
+.scorers div:last-child{text-align:left}
+.sc{color:var(--txt2);font-size:10.5px;line-height:1.75}
+.date-sep{display:flex;align-items:center;gap:10px;color:var(--txt2);font-size:12px;font-weight:700;margin:22px 0 4px}
+.date-sep:before,.date-sep:after{content:"";flex:1;height:1px;background:var(--border)}
+.grid-2{display:grid;gap:0 14px}
+@media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+.h-scroll{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.h-scroll::-webkit-scrollbar{display:none}
+.h-scroll .m{min-width:280px;margin-bottom:0}
+
+/* ---------- البطولات ---------- */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (min-width:600px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:900px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 10px;min-height:128px;overflow:hidden;transition:.15s}
+.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tile:before{content:"";position:absolute;top:0;right:0;left:0;height:4px;background:var(--c,var(--gold))}
+.tile img{width:50px;height:50px;object-fit:contain;background:#fff;border-radius:50%;padding:5px}
+.tile b{font-size:13.5px;font-weight:800;line-height:1.4}
+.tile small{color:var(--txt3);font-size:11px}
+.tile.feat{grid-column:1/-1;flex-direction:row;justify-content:flex-start;gap:16px;padding:18px 20px;min-height:auto;background:linear-gradient(135deg,#3a0a1a,#141414 70%)}
+.tile.feat img{width:58px;height:58px}
+.tile.feat b{font-size:17px}
+.comp-head{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;margin-bottom:16px}
+.comp-head img{width:62px;height:62px;object-fit:contain;background:#fff;border-radius:50%;padding:6px;flex-shrink:0}
+.comp-head h1{font-size:19px;font-weight:800}
+.comp-head .chs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--txt2);font-size:13px;font-weight:700;margin-bottom:12px}
+.back:hover{color:var(--gold)}
+
+/* ---------- الترتيب ---------- */
+.std{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{background:var(--card2);color:var(--txt2);font-size:10.5px;padding:10px 5px;font-weight:800}
+td{padding:9px 5px;font-size:12px;text-align:center;border-bottom:1px solid var(--card2)}
+tr:last-child td{border-bottom:none}
+.t-cell{text-align:right!important}
+.t-in{display:flex;align-items:center;gap:8px}
+.t-in img{width:22px;height:22px;object-fit:contain;background:#fff;border-radius:50%;padding:2px;flex-shrink:0}
+.t-in span{font-size:12px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}
+.pts{color:var(--gold);font-weight:800;font-size:13px}
+.rank{color:var(--txt2);font-weight:800}
+tr.top td:first-child{box-shadow:inset -3px 0 0 var(--gold)}
+tr.bot td:first-child{box-shadow:inset -3px 0 0 var(--red)}
+
+/* ---------- تفاصيل المباراة ---------- */
+.md-card{background:linear-gradient(180deg,#171717,#101010);border:1px solid var(--border);border-radius:20px;padding:22px 14px}
+.md-lg{display:flex;align-items:center;justify-content:center;gap:8px;color:var(--gold);font-size:13px;font-weight:800;margin-bottom:18px}
+.md-lg img{width:22px;height:22px;object-fit:contain;background:#fff;border-radius:50%;padding:2px}
+.md-row{display:flex;align-items:flex-start}
+.md-side{flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;min-width:0}
+.md-side .logo-c{width:66px;height:66px;padding:6px}
+.md-side b{font-size:14.5px;font-weight:800;line-height:1.35}
+.star{font-size:11.5px;white-space:nowrap;padding:5px 11px;border-radius:14px;border:1px solid var(--border);color:var(--txt2);font-weight:700}
+.star.on{border-color:var(--gold);color:var(--gold);background:rgba(255,215,0,.08)}
+.md-mid{width:120px;text-align:center;padding-top:10px;flex-shrink:0}
+.md-mid .score{font-size:34px}
+.md-mid .time{font-size:26px}
+.md-date{color:var(--txt2);font-size:12px;margin-top:8px;line-height:1.7}
+.info-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-top:12px}
+.info-box h3{font-size:14px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips .ch{font-size:12.5px;padding:7px 13px;border-radius:10px}
+.chip-c{padding:7px 14px;border-radius:10px;background:var(--card2);border:1px solid var(--border);font-size:13px;font-weight:700}
+.tz-times{display:flex;gap:8px;flex-wrap:wrap}
+.tz-times div{flex:1;min-width:90px;background:var(--card2);border-radius:10px;padding:9px;text-align:center}
+.tz-times small{display:block;color:var(--txt2);font-size:11px}
+.tz-times b{font-size:16px;color:var(--gold)}
+.ev-cols{display:flex;gap:12px}
+.ev-col{flex:1;min-width:0}
+.ev-col h4{font-size:12px;color:var(--txt2);margin-bottom:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ev{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;padding:7px 0;border-bottom:1px solid var(--card2);line-height:1.45}
+.ev:last-child{border-bottom:none}
+.ev .min{color:var(--gold);font-weight:800;flex-shrink:0;min-width:32px}
+.ev small{display:block;color:var(--txt3);font-size:10.5px}
+.card-y,.card-r{display:inline-block;width:10px;height:14px;border-radius:2px;flex-shrink:0;margin-top:2px}
+.card-y{background:#F5C518}.card-r{background:var(--red)}
+
+/* ---------- القنوات ---------- */
+.ch-tile{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;transition:.15s}
+.ch-tile:hover{border-color:var(--gold)}
+.ch-logo{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;flex-shrink:0}
+.ch-tile b{display:block;font-size:14px;font-weight:800}
+.ch-tile small{color:var(--txt2);font-size:11.5px}
+.ch-grid{display:grid;gap:10px}
+@media (min-width:600px){.ch-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:900px){.ch-grid{grid-template-columns:1fr 1fr 1fr}}
+.freq td{font-size:12.5px}
+.freq td b{color:var(--gold);font-size:14px}
+
+/* ---------- الأخبار ---------- */
+.news{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:15px;margin-bottom:10px}
+.news h3{font-size:15px;font-weight:800;line-height:1.6;margin:6px 0}
+.news p{color:#C9C9C9;font-size:13.5px;line-height:1.9;white-space:pre-line}
+.news .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--txt3);font-size:11.5px}
+.news details summary{color:var(--gold);font-size:12.5px;font-weight:700;cursor:pointer;margin-top:6px;list-style:none}
+.news details summary::-webkit-details-marker{display:none}
+.news details[open] summary{display:none}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (min-width:700px){.docs{grid-template-columns:repeat(4,1fr)}}
+.doc{display:block;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--border)}
+.doc .poster{aspect-ratio:2/3;background:#222 center/cover no-repeat;display:flex;align-items:flex-end}
+.doc .poster span{background:rgba(0,0,0,.7);font-size:11px;padding:3px 8px;margin:8px;border-radius:6px}
+.doc b{display:block;font-size:12.5px;padding:9px 10px;line-height:1.5}
+
+/* ---------- الاشتراك ---------- */
+.plans{display:grid;gap:14px}
+@media (min-width:860px){.plans{grid-template-columns:repeat(3,1fr)}}
+.plan{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px 20px;display:flex;flex-direction:column}
+.plan.best{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),0 10px 40px rgba(255,215,0,.08);position:relative}
+.plan .ribbon{position:absolute;top:-12px;right:20px;background:var(--gold);color:#0A0A0A;font-size:11px;font-weight:800;padding:4px 12px;border-radius:12px}
+.plan h3{font-size:18px;font-weight:800}
+.plan .desc{color:var(--txt2);font-size:12.5px;margin:4px 0 14px}
+.price{font-size:30px;font-weight:800;color:var(--gold)}
+.price small{font-size:13px;color:var(--txt2);font-weight:600}
+.price-alt{color:var(--txt2);font-size:12.5px;margin-top:4px}
+.feats{list-style:none;margin:18px 0 20px;flex:1}
+.feats li{display:flex;gap:9px;font-size:13.5px;padding:7px 0;line-height:1.5}
+.feats li.no{color:var(--txt3)}
+.feats li:before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+.feats li.no:before{content:"—";color:var(--txt3)}
+.note{background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.3);border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.9;color:#EDEDED}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+.faq summary{font-weight:700;font-size:14px;cursor:pointer}
+.faq p{color:var(--txt2);font-size:13.5px;line-height:1.9;margin-top:10px}
+
+/* ---------- النماذج ---------- */
+.auth{max-width:420px;margin:10px auto 0;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:26px 22px}
+.auth h1{font-size:21px;font-weight:800;text-align:center}
+.auth .sub{text-align:center;color:var(--txt2);font-size:13px;margin:6px 0 20px;line-height:1.8}
+.seg{display:flex;background:var(--card2);border-radius:14px;padding:4px;margin-bottom:18px}
+.seg button{flex:1;padding:10px;border-radius:11px;font-size:13.5px;font-weight:800;color:var(--txt2)}
+.seg button.on{background:var(--gold);color:#0A0A0A}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12.5px;color:var(--txt2);margin-bottom:6px;font-weight:600}
+.field input{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--txt);border-radius:12px;padding:13px 14px;font-size:15px;outline:none}
+.field input:focus{border-color:var(--gold)}
+.field input[dir=ltr]{text-align:left}
+.or{display:flex;align-items:center;gap:12px;color:var(--txt3);font-size:12px;margin:16px 0}
+.or:before,.or:after{content:"";flex:1;height:1px;background:var(--border)}
+.g-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;border-radius:26px;background:#fff;color:#1F1F1F;font-size:14.5px;font-weight:700}
+.g-btn svg{width:19px;height:19px}
+.msg{font-size:13px;padding:10px 12px;border-radius:10px;margin-bottom:12px;line-height:1.7}
+.msg.err{background:rgba(227,6,19,.12);color:#FF6B6B;border:1px solid rgba(227,6,19,.35)}
+.msg.ok{background:rgba(46,204,113,.1);color:var(--green);border:1px solid rgba(46,204,113,.35)}
+.link-btn{color:var(--gold);font-size:13px;font-weight:700}
+.center{text-align:center}
+
+/* ---------- الحساب ---------- */
+.acc-head{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px}
+.acc-head .avatar{width:62px;height:62px;font-size:26px}
+.acc-head h1{font-size:19px;font-weight:800}
+.acc-head small{color:var(--txt2);font-size:12.5px}
+.row-form{display:flex;gap:8px}
+.row-form input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--txt);border-radius:12px;padding:11px 13px;font-size:14px;outline:none}
+.row-form input:focus{border-color:var(--gold)}
+.row-form .btn{padding:11px 18px;font-size:13px}
+.fav-list{display:flex;flex-wrap:wrap;gap:8px}
+.fav-item{display:flex;align-items:center;gap:8px;background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:7px 10px 7px 7px;font-size:13px;font-weight:700}
+.fav-item button{color:var(--txt3);font-size:15px;line-height:1;padding:0 3px}
+.fav-item button:hover{color:var(--red)}
+
+/* ---------- التذييل ---------- */
+footer{border-top:1px solid var(--border);margin-top:50px;padding:32px 16px 28px;text-align:center;color:var(--txt3);font-size:12px;line-height:2}
+.foot-links{display:flex;justify-content:center;gap:6px 18px;flex-wrap:wrap;margin-bottom:14px}
+.foot-links a{color:var(--txt2);font-size:13px;font-weight:600}
+.foot-links a:hover{color:var(--gold)}
+.app-strip{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#1c1700,#141414 60%);border:1px solid rgba(255,215,0,.3);border-radius:20px;padding:20px;flex-wrap:wrap}
+.app-strip h3{font-size:16px;font-weight:800;margin-bottom:4px}
+.app-strip p{color:var(--txt2);font-size:13px;line-height:1.8}
+.app-strip .stores{display:flex;gap:8px;margin-right:auto;flex-wrap:wrap}
+.store{display:flex;flex-direction:column;align-items:flex-start;background:#000;border:1px solid #444;border-radius:10px;padding:7px 14px;min-width:130px}
+.store small{font-size:10px;color:var(--txt2)}
+.store b{font-size:14px}
+.toast{position:fixed;bottom:calc(var(--bot-h) + 18px);left:50%;transform:translateX(-50%) translateY(20px);background:#222;border:1px solid var(--gold);color:var(--txt);padding:11px 20px;border-radius:24px;font-size:13.5px;font-weight:700;z-index:400;opacity:0;transition:.25s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media (min-width:900px){.toast{bottom:28px}}
 </style>
 </head>
 <body>
 
-  <div class="logo-wrap">
-    <div class="pair"><div class="bar"></div><div class="bar"></div></div>
-    <div class="colon"><div class="dot"></div><div class="dot"></div></div>
-    <div class="pair"><div class="bar"></div><div class="bar"></div></div>
-  </div>
-  <h1>S P O R T S</h1>
-
-  <div class="tagline">المباراة والقناة والمعلّق في مكان واحد</div>
-  <div class="sub">
-    مواعيد المباريات، القنوات الناقلة، أسماء المعلّقين، جداول الترتيب والنتائج التفصيلية —
-    لأكثر من 36 بطولة عربية وعالمية في تطبيق واحد
-  </div>
-
-  <a class="cta" href="live.html">🔴 تابع المباريات الآن</a>
-  <div class="cta-note">🎁 مجاناً على الموقع لفترة ترويجية — المباشر، اليوم، النتائج والترتيب</div>
-
-  <div class="section-title">المزايا</div>
-  <div class="features">
-    <div class="feature">⚽ مواعيد المباريات لحظياً</div>
-    <div class="feature">📺 القنوات الناقلة لكل مباراة</div>
-    <div class="feature">🔴 متابعة المباريات المباشرة</div>
-    <div class="feature">📊 جداول ترتيب الدوريات</div>
-    <div class="feature">📅 جدول مباريات اليوم</div>
-    <div class="feature">⭐ فرقك المفضلة</div>
-    <div class="feature">🌍 ثلاثة توقيتات محلية</div>
-    <div class="feature premium">🎙️ أسماء المعلّقين</div>
-    <div class="feature premium">🥅 تفاصيل الأهداف والبطاقات</div>
-    <div class="feature premium">🛰️ ترددات القنوات والأقمار</div>
-    <div class="feature premium">🔔 تذكيرات قبل المباراة</div>
-  </div>
-
-  <div class="section-title">البطولات</div>
-  <div class="leagues">
-    <b>الخليج:</b> عُمان · السعودية · الإمارات · قطر · البحرين · الكويت<br>
-    <b>عربية:</b> مصر · العراق<br>
-    <b>أوروبا:</b> إنجلترا · إسبانيا · ألمانيا · إيطاليا · فرنسا · هولندا · البرتغال · اسكتلندا<br>
-    <b>الكؤوس:</b> كأس إنجلترا · كأس إسبانيا · كأس إيطاليا · كأس ألمانيا · كأس فرنسا · كؤوس الخليج<br>
-    <b>المنتخبات:</b> كأس الخليج · FIFA · UEFA · AFC · الاتحاد الأفريقي
-  </div>
-
-  <div class="section-title">الباقات</div>
-  <div class="plans">
-    <div class="plan">
-      <div class="plan-name">عضو</div>
-      <div class="plan-price">مجاناً</div>
-      <div class="plan-per">المواعيد والنتائج والقنوات</div>
-    </div>
-    <div class="plan best">
-      <div class="plan-name">بريميوم — شهري</div>
-      <div class="plan-price">$2.99</div>
-      <div class="plan-per">تجربة مجانية 7 أيام</div>
-    </div>
-    <div class="plan best">
-      <div class="plan-name">بريميوم — سنوي</div>
-      <div class="plan-price">$19.99</div>
-      <div class="plan-per">وفّر 44%</div>
+<header class="top">
+  <div class="top-in">
+    <a href="#/" class="brand" aria-label="11:11 Sports">
+      <span class="mini-logo"><i></i><i></i><b><s></s><s></s></b><i></i><i></i></span>
+      <span class="brand-txt">SPORTS</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#/" data-r="home">الرئيسية</a>
+      <a href="#/matches" data-r="matches">المباريات</a>
+      <a href="#/live" data-r="live" class="live-link">🔴 مباشر</a>
+      <a href="#/competitions" data-r="competitions">البطولات</a>
+      <a href="#/channels" data-r="channels">القنوات</a>
+      <a href="#/news" data-r="news">الأخبار</a>
+      <a href="#/plans" data-r="plans">الاشتراك</a>
+    </nav>
+    <div class="top-actions">
+      <span id="authSlot"></span>
+      <button class="burger" id="menuBtn" aria-label="القائمة"><i></i><i></i><i></i></button>
     </div>
   </div>
+</header>
+<div class="promo-strip">🎁 جميع المزايا مجانية على الموقع خلال الفترة الترويجية — <a href="#/plans">اعرف الباقات</a></div>
 
-  <div class="links">
-    <a class="btn" href="privacy.html">سياسة الخصوصية</a>
-    <a class="btn" href="terms.html">شروط الاستخدام</a>
-    <a class="btn" href="https://x.com/elevenelev1111">تابعنا على إكس</a>
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head" id="drawerHead"></div>
+  <div class="drawer-links" id="drawerLinks">
+    <a href="#/" data-r="home"><span class="ic">🏠</span>الرئيسية</a>
+    <a href="#/matches" data-r="matches"><span class="ic">📅</span>المباريات</a>
+    <a href="#/live" data-r="live"><span class="ic">🔴</span>مباشر الآن</a>
+    <a href="#/competitions" data-r="competitions"><span class="ic">🏆</span>البطولات والترتيب</a>
+    <a href="#/channels" data-r="channels"><span class="ic">📡</span>القنوات والترددات</a>
+    <a href="#/news" data-r="news"><span class="ic">📰</span>الأخبار والوثائقيات</a>
+    <a href="#/plans" data-r="plans"><span class="ic">💎</span>الاشتراك والباقات</a>
+    <hr>
+    <a href="#/account" data-r="account" id="drawerAcc"><span class="ic">👤</span>حسابي</a>
+    <a href="privacy.html"><span class="ic">🔒</span>سياسة الخصوصية</a>
+    <a href="terms.html"><span class="ic">📄</span>شروط الاستخدام</a>
+    <a href="https://x.com/elevenelev1111" target="_blank" rel="noopener"><span class="ic">𝕏</span>تابعنا على إكس</a>
   </div>
+  <div class="drawer-foot">11:11 Sports © 2026</div>
+</aside>
 
-  <footer>
-    11:11 Sports — سلطنة عُمان 🇴🇲<br>
-    جميع الحقوق محفوظة © 2026
-  </footer>
+<main id="view"><div class="loading"><div class="spinner"></div>جارٍ التحميل…</div></main>
 
+<footer>
+  <div class="foot-links">
+    <a href="#/">الرئيسية</a>
+    <a href="#/matches">المباريات</a>
+    <a href="#/competitions">البطولات</a>
+    <a href="#/channels">القنوات</a>
+    <a href="#/news">الأخبار</a>
+    <a href="#/plans">الاشتراك</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+    <a href="terms.html">شروط الاستخدام</a>
+    <a href="https://x.com/elevenelev1111" target="_blank" rel="noopener">إكس</a>
+  </div>
+  11:11 Sports — جميع الحقوق محفوظة © 2026
+</footer>
+
+<nav class="bottom" id="bottom">
+  <a href="#/" data-r="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+    <span>الرئيسية</span></a>
+  <a href="#/matches" data-r="matches">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+    <span>المباريات</span></a>
+  <a href="#/live" data-r="live" class="live-b">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="2.5" fill="currentColor"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg>
+    <span>مباشر</span><em class="live-dot" id="liveDot" style="display:none"></em></a>
+  <a href="#/competitions" data-r="competitions">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+    <span>البطولات</span></a>
+  <a href="#/account" data-r="account" id="bottomAcc">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+    <span id="bottomAccTxt">دخول</span></a>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  updateProfile, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyDinRUGdMj94latWozCKTjPBzssuWcnBww",
+  authDomain: "oman-sports-app.firebaseapp.com",
+  projectId: "oman-sports-app",
+  storageBucket: "oman-sports-app.firebasestorage.app",
+  messagingSenderId: "804512343700",
+  appId: "1:804512343700:web:00e27a09dd3a1251a5f681"
+});
+const db = getFirestore(app);
+const auth = getAuth(app);
+auth.languageCode = 'ar';
+
+/* ================= الإعدادات =================
+   PROMO = true  → كل المزايا مفتوحة للجميع على الموقع (الفترة الترويجية)
+   PROMO = false → الزائر: المواعيد والنتائج فقط | العضو: + القنوات والمفضلة | الباقي للمشتركين في التطبيق */
+const PROMO = true;
+
+/* ================= البيانات الثابتة ================= */
+const LOGO = id => 'https://media.api-sports.io/football/leagues/' + id + '.png';
+const LEAGUES = [
+  ['gulf_cup','كأس الخليج',25],['oman','دوري جندال العماني',406],['saudi','دوري روشن السعودي',307],
+  ['uae','دوري أدنوك للمحترفين',301],['qatar','دوري جيتور القطري',305],['bahrain','الدوري البحريني',417],
+  ['kuwait','الدوري الكويتي',330],['egypt','دوري نايل المصري',233],['iraq','دوري نجوم العراق',542],
+  ['england','الدوري الإنجليزي',39],['spain','الدوري الإسباني',140],['germany','الدوري الألماني',78],
+  ['italy','الدوري الإيطالي',135],['france','الدوري الفرنسي',61],['netherlands','الدوري الهولندي',88],
+  ['portugal','الدوري البرتغالي',94],['scotland','الدوري الاسكتلندي',179],
+  ['fa_cup','كأس إنجلترا',45],['copa_rey','كأس إسبانيا',143],['coppa','كأس إيطاليا',137],
+  ['dfb','كأس ألمانيا',81],['coupe_fr','كأس فرنسا',66],
+  ['oman_cup','كأس السلطان',726],['oman_fa','كأس الاتحاد العُماني',1197],['oman_sup','السوبر العُماني',944],
+  ['bahrain_cup','كأس ملك البحرين',1049],['bahrain_fed','كأس الاتحاد البحريني',485],['bahrain_sup','السوبر البحريني',1109],
+  ['saudi_d1','دوري يلو السعودي',308],['uae_d1','الدرجة الأولى الإماراتية',303],
+  ['qatar_d2','الدرجة الثانية القطرية',306],['kuwait_d1','الدرجة الأولى الكويتية',331],
+  ['world_cup','FIFA',1],['euro','كأس أمم أوروبا',4],['afcon','كأس أمم أفريقيا',6],['asian_cup','كأس آسيا',7],
+];
+const LNAME = {}, LID = {};
+LEAGUES.forEach(([k,n,id]) => { LNAME[k] = n; LID[k] = id; });
+const LORDER = LEAGUES.map(l => l[0]);
+const lgLogo = k => LID[k] ? LOGO(LID[k]) : '';
+
+const CONFED_GROUPS = [
+  { key:'gulf_grp', label:'كأس الخليج', keys:['gulf_cup'], color:'#8D1B3D' },
+  { key:'fifa_grp', label:'FIFA', keys:['world_cup'], color:'#326295' },
+  { key:'uefa_grp', label:'UEFA', keys:['euro'], color:'#143CDB' },
+  { key:'afc_grp', label:'AFC', keys:['asian_cup'], color:'#0B5E3A' },
+  { key:'caf_grp', label:'الاتحاد الأفريقي', keys:['afcon'], color:'#C8A200' },
+];
+const ARAB_GROUPS = [
+  { key:'oman_grp', label:'الكرة العُمانية', keys:['oman','oman_cup','oman_fa','oman_sup'], color:'#DB161B' },
+  { key:'saudi_grp', label:'الكرة السعودية', keys:['saudi','saudi_d1'], color:'#006C35' },
+  { key:'uae_grp', label:'الكرة الإماراتية', keys:['uae','uae_d1'], color:'#CE1126' },
+  { key:'qatar_grp', label:'الكرة القطرية', keys:['qatar','qatar_d2'], color:'#8D1B3D' },
+  { key:'bahrain_grp', label:'الكرة البحرينية', keys:['bahrain','bahrain_cup','bahrain_fed','bahrain_sup'], color:'#CE1126' },
+  { key:'kuwait_grp', label:'الكرة الكويتية', keys:['kuwait','kuwait_d1'], color:'#007A3D' },
+  { key:'egypt_grp', label:'الكرة المصرية', keys:['egypt'], color:'#C8102E' },
+  { key:'iraq_grp', label:'الكرة العراقية', keys:['iraq'], color:'#1B5E20' },
+];
+const WORLD_GROUPS = [
+  { key:'england_grp', label:'الكرة الإنجليزية', keys:['england','fa_cup'], color:'#3D195B' },
+  { key:'spain_grp', label:'الكرة الإسبانية', keys:['spain','copa_rey'], color:'#EE2737' },
+  { key:'germany_grp', label:'الكرة الألمانية', keys:['germany','dfb'], color:'#D3010C' },
+  { key:'italy_grp', label:'الكرة الإيطالية', keys:['italy','coppa'], color:'#0068A8' },
+  { key:'france_grp', label:'الكرة الفرنسية', keys:['france','coupe_fr'], color:'#1E2A78' },
+  { key:'netherlands_grp', label:'الدوري الهولندي', keys:['netherlands'], color:'#FF6600' },
+  { key:'portugal_grp', label:'الدوري البرتغالي', keys:['portugal'], color:'#C8102E' },
+  { key:'scotland_grp', label:'الدوري الاسكتلندي', keys:['scotland'], color:'#003087' },
+];
+const ALL_GROUPS = CONFED_GROUPS.concat(ARAB_GROUPS, WORLD_GROUPS);
+
+const BC = {
+  england:['beIN Sports','TOD'], spain:['beIN Sports','TOD'], germany:['MBC Action','شاهد'],
+  italy:['StarzPlay','أبوظبي الرياضية','شاشا'], france:['beIN Sports','TOD'], netherlands:['دبي الرياضية'],
+  scotland:['الشارقة الرياضية'], portugal:['شاشا'],
+  fa_cup:['beIN Sports'], coppa:['MBC Action','شاهد'], copa_rey:['MBC Action','شاهد'],
+  dfb:['أبوظبي الرياضية'], coupe_fr:['beIN Sports','TOD'],
+  world_cup:['beIN Sports','TOD'], euro:['beIN Sports','TOD'], asian_cup:['beIN Sports','TOD'],
+  gulf_cup:['الكاس','شوف'], afcon:['beIN Sports'],
+  oman:['عمان الرياضية','تطبيق عين'], saudi:['Thmanyah'],
+  uae:['أبوظبي الرياضية','دبي الرياضية','الشارقة الرياضية'], qatar:['الكاس'],
+  bahrain:['البحرين الرياضية'], kuwait:['الكويت الرياضية'], egypt:['أون تايم الرياضية'], iraq:['العراقية الرياضية'],
+  oman_cup:['عمان الرياضية'], oman_fa:['عمان الرياضية'], oman_sup:['عمان الرياضية'],
+  bahrain_cup:['البحرين الرياضية'], bahrain_fed:['البحرين الرياضية'], bahrain_sup:['البحرين الرياضية'],
+  saudi_d1:['Thmanyah'], uae_d1:['أبوظبي الرياضية','دبي الرياضية','الشارقة الرياضية'],
+  qatar_d2:['الكاس'], kuwait_d1:['الكويت الرياضية'],
+};
+const CC = {
+  'beIN Sports':'#5B2C91','TOD':'#B8860B','MBC Action':'#C99A00','StarzPlay':'#5A5A5A',
+  'أبوظبي الرياضية':'#8B6914','شاشا':'#0B63CE','عمان الرياضية':'#0057B8','تطبيق عين':'#E91E8C',
+  'شاهد':'#00A651','الشارقة الرياضية':'#D71920','stc sports':'#4B0099','الكاس':'#7A0019',
+  'دبي الرياضية':'#C8102E','البحرين الرياضية':'#CE1126','الكويت الرياضية':'#6B0F1A',
+  'أون تايم الرياضية':'#1E7A3C','Thmanyah':'#3E6B27','العراقية الرياضية':'#1B5E20','شوف':'#7A0019',
+  'السعودية الرياضية':'#006C35',
+};
+const FREQ = {
+  'beIN Sports':[['نايل سات 7°W','11566','V','27500','5/6'],['عرب سات بدر 26°E','12245','V','27500','5/6']],
+  'أبوظبي الرياضية':[['نايل سات 7°W','11919','H','27500','5/6'],['عرب سات بدر 26°E','12015','H','27500','3/4']],
+  'دبي الرياضية':[['نايل سات 7°W','11900','V','27500','5/6'],['عرب سات بدر 26°E','11996','H','27500','3/4']],
+  'الشارقة الرياضية':[['نايل سات 7°W','11316','H','27500','5/6']],
+  'عمان الرياضية':[['نايل سات 7°W','11393','H','27500','5/6'],['عرب سات بدر 26°E','12360','V','27500','3/4']],
+  'الكويت الرياضية':[['نايل سات 7°W','11488','V','27500','5/6']],
+  'البحرين الرياضية':[['نايل سات 7°W','11393','H','27500','5/6']],
+  'الكاس':[['نايل سات 7°W','11334','V','27500','5/6'],['عرب سات بدر 26°E','11785','H','27500','3/4']],
+  'السعودية الرياضية':[['عرب سات بدر 26°E','12245','V','27500','5/6'],['نايل سات 7°W','11938','V','27500','3/4']],
+  'العراقية الرياضية':[['نايل سات 7°W','10873','V','27500','5/6']],
+  'أون تايم الرياضية':[['نايل سات 7°W','11316','H','27500','5/6']],
+  'MBC Action':[['نايل سات 7°W','11996','H','27500','5/6'],['عرب سات بدر 26°E','12034','V','27500','3/4']],
+};
+const STREAMING_ONLY = ['TOD','شاهد','StarzPlay','Thmanyah','شاشا','تطبيق عين','منصة مرايا','تطبيق سماشي','stc sports','شوف'];
+const TZ = [ { k:'om', label:'عُمان', o:4 }, { k:'sa', label:'السعودية', o:3 }, { k:'eg', label:'مصر', o:2 } ];
+const MONTHS = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const DAYS = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+
+/* ================= الحالة ================= */
+function storeGet(k,d){ try{ const v = localStorage.getItem('e11_'+k); return v === null ? d : v; }catch(e){ return d; } }
+function storeSet(k,v){ try{ localStorage.setItem('e11_'+k, v); }catch(e){} }
+
+const S = {
+  loaded:false, error:null,
+  live:[], up:[], done:[], std:{}, news:[], docs:[],
+  user:null, authReady:false, favs:[],
+  tz: storeGet('tz','om'),
+  mTab:'today', mLeague:'all', cTab:{},
+  authMode:'login', authMsg:null, authBusy:false,
+  detail:{},
+};
+
+/* ================= أدوات ================= */
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl = u => /^https?:\/\//i.test(String(u || '')) ? esc(u) : '';
+const enc = s => encodeURIComponent(s);
+const p2 = n => String(n).padStart(2,'0');
+const tzObj = () => TZ.find(t => t.k === S.tz) || TZ[0];
+const shift = (d, o) => new Date(new Date(d).getTime() + (o ?? tzObj().o) * 3600000);
+const hhmm = (d, o) => { const x = shift(d, o); return p2(x.getUTCHours()) + ':' + p2(x.getUTCMinutes()); };
+const dkey = d => { const x = shift(d); return x.getUTCFullYear() + '-' + p2(x.getUTCMonth()+1) + '-' + p2(x.getUTCDate()); };
+const dlabel = d => {
+  const x = shift(d);
+  const k = dkey(d), today = dkey(new Date()), tmr = dkey(new Date(Date.now() + 864e5)), yst = dkey(new Date(Date.now() - 864e5));
+  const base = DAYS[x.getUTCDay()] + ' ' + x.getUTCDate() + ' ' + MONTHS[x.getUTCMonth()];
+  if (k === today) return 'اليوم — ' + base;
+  if (k === tmr) return 'غداً — ' + base;
+  if (k === yst) return 'أمس — ' + base;
+  return base;
+};
+const chans = m => (m.channels && m.channels.length) ? m.channels : (BC[m.leagueKey] || []);
+const fid = m => String(m.fixtureId || m.id);
+const initial = u => ((u && (u.displayName || u.email)) || '؟').trim().charAt(0).toUpperCase();
+const imgErr = `onerror="this.style.visibility='hidden'"`;
+const isFT = m => ['FT','AET','PEN'].includes(m.status);
+
+/* الوصول حسب الباقة */
+function can(feature){
+  if (PROMO) return true;
+  if (feature === 'channels' || feature === 'favorites') return !!S.user;
+  return false; // commentators / freq / events / exclusive → في التطبيق للمشتركين
+}
+function lockMsg(feature){
+  if (!S.user && (feature === 'channels' || feature === 'favorites'))
+    return '<a href="#/login" class="lock">🔒 سجّل دخولك مجاناً لعرضها</a>';
+  return '<a href="#/plans" class="lock">💎 متاحة للمشتركين</a>';
+}
+
+function toast(t){
+  const el = $('toast'); el.textContent = t; el.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+/* ================= تحميل البيانات ================= */
+async function loadAll(){
+  const safe = p => p.then(s => s.docs.map(d => ({ id:d.id, ...d.data() }))).catch(() => []);
+  const [l,u,mm,st,nw,dc] = await Promise.all([
+    safe(getDocs(collection(db,'live'))),
+    safe(getDocs(collection(db,'upcoming'))),
+    safe(getDocs(collection(db,'matches'))),
+    safe(getDocs(collection(db,'standings'))),
+    safe(getDocs(collection(db,'news'))),
+    safe(getDocs(collection(db,'documentaries'))),
+  ]);
+  S.live = l.map(x => ({ ...x, _c:'live' }));
+  S.up = u.map(x => ({ ...x, _c:'upcoming' }));
+  S.done = mm.map(x => ({ ...x, _c:'matches' }));
+  S.std = {}; st.forEach(x => { S.std[x.id] = x.rows || []; });
+  S.news = nw.sort((a,b) => String(b.publishedAt||'').localeCompare(String(a.publishedAt||'')));
+  S.docs = dc.sort((a,b) => String(b.createdAt||'').localeCompare(String(a.createdAt||'')));
+  S.loaded = true;
+  if (!l.length && !u.length && !mm.length && !st.length) S.error = 'empty';
+  else S.error = null;
+}
+async function loadLive(){
+  try{
+    const s = await getDocs(collection(db,'live'));
+    S.live = s.docs.map(d => ({ id:d.id, ...d.data(), _c:'live' }));
+  }catch(e){}
+}
+
+/* ================= مكوّنات ================= */
+function liveOf(m){ return S.live.find(x => fid(x) === fid(m)); }
+
+function scoreHTML(h, a){ return '<div class="score"><span>'+esc(h)+'</span><i>-</i><span>'+esc(a)+'</span></div>'; }
+
+function card(m, opts = {}){
+  const lv = m._c === 'live' ? m : liveOf(m);
+  const src = lv || m;
+  const ft = isFT(m);
+  let mid;
+  if (lv) mid = scoreHTML(src.homeGoals ?? 0, src.awayGoals ?? 0) + '<span class="badge b-red">' + (src.elapsed ? src.elapsed + "'" : 'مباشر') + '</span>';
+  else if (ft) mid = scoreHTML(m.homeGoals, m.awayGoals) + '<span class="badge b-grey">انتهت</span>';
+  else mid = '<div class="vs">VS</div><div class="time">' + hhmm(m.date) + '</div>';
+
+  const ch = chans(m);
+  let foot = '';
+  if (!opts.noFoot && (ch.length || m.commentator1)){
+    const chHTML = can('channels')
+      ? ch.slice(0,3).map(c => '<span class="ch" style="background:'+(CC[c]||'#333')+'">'+esc(c)+'</span>').join('')
+      : lockMsg('channels');
+    const cm = m.commentator1 ? (can('commentators') ? '<span class="comm">🎙️ '+esc(m.commentator1)+'</span>' : '') : '';
+    foot = '<div class="m-foot">' + chHTML + cm + '</div>';
+  }
+
+  let scorers = '';
+  const evs = (m.events || []).filter(e => e.category !== 'card');
+  if (evs.length && can('events')){
+    const line = e => '<div class="sc">⚽ '+esc(e.player)+' '+esc(e.minute)+"'"+(e.type==='penalty'?' (ج)':'')+(e.type==='own'?' (ع)':'')+'</div>';
+    scorers = '<div class="scorers"><div>'+evs.filter(e=>e.team===m.homeTeam).map(line).join('')
+      +'</div><div>'+evs.filter(e=>e.team===m.awayTeam).map(line).join('')+'</div></div>';
+  }
+  const fv = t => S.favs.includes(t) ? '<span class="fav">★</span>' : '';
+  const href = '#/match/' + (m._c || 'matches') + '/' + enc(m.id);
+  return '<a class="m'+(lv?' is-live':'')+'" href="'+href+'"><div class="m-row">'
+    + '<div class="side"><img class="logo-c" src="'+safeUrl(m.homeLogo)+'" alt="" loading="lazy" '+imgErr+'><b>'+fv(m.homeTeam)+' '+esc(m.homeTeam)+'</b></div>'
+    + '<div class="mid">'+mid+'</div>'
+    + '<div class="side"><img class="logo-c" src="'+safeUrl(m.awayLogo)+'" alt="" loading="lazy" '+imgErr+'><b>'+fv(m.awayTeam)+' '+esc(m.awayTeam)+'</b></div>'
+    + '</div>' + foot + scorers + '</a>';
+}
+
+function byLeague(list){
+  const g = {};
+  list.forEach(m => { (g[m.leagueKey] = g[m.leagueKey] || []).push(m); });
+  const keys = LORDER.filter(k => g[k]).concat(Object.keys(g).filter(k => !LORDER.includes(k)));
+  return keys.map(k => ({ key:k, items:g[k] }));
+}
+function lgHead(k, extra){
+  const lo = lgLogo(k);
+  return '<a class="lg-head" href="#/comp/'+enc(k)+'">'
+    + (lo ? '<img src="'+lo+'" alt="" loading="lazy" '+imgErr+'>' : '')
+    + '<span>'+esc(LNAME[k] || k)+'</span>' + (extra ? '<small>'+extra+'</small>' : '') + '</a>';
+}
+function leagueBlocks(list){
+  return byLeague(list).map(g => lgHead(g.key) + g.items.map(m => card(m)).join('')).join('');
+}
+function empty(t, sub){ return '<div class="empty">'+t+(sub ? '<br><small style="opacity:.7">'+sub+'</small>' : '')+'</div>'; }
+function spinner(){ return '<div class="loading"><div class="spinner"></div>جارٍ تحميل البيانات…</div>'; }
+
+function tzSelect(){
+  return '<select class="sel" data-change="tz" aria-label="التوقيت">'
+    + TZ.map(t => '<option value="'+t.k+'"'+(t.k===S.tz?' selected':'')+'>🕐 توقيت '+t.label+'</option>').join('')
+    + '</select>';
+}
+
+function todayList(){
+  const tk = dkey(new Date());
+  const seen = new Set(), all = [];
+  S.live.concat(S.done, S.up).forEach(m => {
+    if (!m.date || dkey(m.date) !== tk) return;
+    const id = fid(m); if (seen.has(id)) return;
+    seen.add(id); all.push(m);
+  });
+  return all.sort((a,b) => new Date(a.date) - new Date(b.date));
+}
+function upcomingList(){
+  const now = Date.now();
+  const doneIds = new Set(S.done.map(fid));
+  return S.up.filter(m => m.date && new Date(m.date).getTime() > now - 2*3600e3 && !doneIds.has(fid(m)))
+    .sort((a,b) => new Date(a.date) - new Date(b.date));
+}
+function favMatches(){
+  if (!S.favs.length) return [];
+  const has = m => S.favs.includes(m.homeTeam) || S.favs.includes(m.awayTeam);
+  return upcomingList().filter(has).slice(0,6);
+}
+
+/* ================= الصفحات ================= */
+const V = {};
+
+V.home = () => {
+  const live = S.live;
+  const today = todayList();
+  const fav = favMatches();
+  const leaguesCount = LEAGUES.length;
+  let h = '<section class="hero">'
+    + '<div class="big-logo"><div class="pair"><i></i><i></i></div><b><s></s><s></s></b><div class="pair"><i></i><i></i></div></div>'
+    + '<div class="sport">S P O R T S</div>'
+    + '<h1>المباراة والقناة والمعلّق<br>في مكان واحد</h1>'
+    + '<p>مواعيد المباريات، القنوات الناقلة، أسماء المعلّقين، النتائج التفصيلية وجداول الترتيب لأكثر من '+leaguesCount+' بطولة عربية وعالمية.</p>'
+    + '<div class="hero-btns"><a class="btn btn-gold" href="#/matches">📅 مباريات اليوم</a>'
+    + (S.user ? '<a class="btn btn-line" href="#/account">⭐ فرقي المفضلة</a>' : '<a class="btn btn-line" href="#/login?m=register">أنشئ حساباً مجاناً</a>')
+    + '</div>'
+    + '<div class="stats"><div class="stat"><b>'+leaguesCount+'</b><span>بطولة</span></div>'
+    + '<div class="stat"><b>'+(S.loaded ? today.length : '—')+'</b><span>مباراة اليوم</span></div>'
+    + '<div class="stat"><b style="color:var(--red)">'+(S.loaded ? live.length : '—')+'</b><span>مباشر الآن</span></div></div>'
+    + '</section>';
+
+  if (!S.loaded) return h + spinner();
+
+  if (live.length){
+    h += '<section class="sec"><div class="sec-head"><h2>🔴 مباشر الآن</h2><a href="#/live">الكل ›</a></div>'
+      + '<div class="h-scroll">' + live.map(m => card(m, { noFoot:true })).join('') + '</div></section>';
+  }
+  if (fav.length){
+    h += '<section class="sec"><div class="sec-head"><h2>⭐ مباريات فرقك</h2><a href="#/account">إدارة المفضلة ›</a></div>'
+      + '<div class="grid-2">' + fav.map(m => card(m)).join('') + '</div></section>';
+  }
+  h += '<section class="sec"><div class="sec-head"><h2>📅 مباريات اليوم</h2><a href="#/matches">كل المباريات ›</a></div>';
+  if (today.length){
+    const shown = today.slice(0, 10);
+    h += '<div class="grid-2"><div>' + leagueBlocks(shown.slice(0, Math.ceil(shown.length/2))) + '</div><div>'
+      + leagueBlocks(shown.slice(Math.ceil(shown.length/2))) + '</div></div>';
+    if (today.length > 10) h += '<div class="center" style="margin-top:10px"><a class="btn btn-dark" href="#/matches">عرض '+(today.length-10)+' مباراة أخرى</a></div>';
+  } else {
+    const nxt = upcomingList().slice(0, 6);
+    h += nxt.length
+      ? '<div class="page-sub">لا توجد مباريات اليوم — أقرب المباريات القادمة:</div><div class="grid-2">' + nxt.map(m => card(m)).join('') + '</div>'
+      : empty('لا توجد مباريات اليوم');
+  }
+  h += '</section>';
+
+  h += '<section class="sec"><div class="sec-head"><h2>🏆 البطولات</h2><a href="#/competitions">كل البطولات ›</a></div><div class="tiles">'
+    + ['gulf_grp','oman_grp','saudi_grp','england_grp','spain_grp','uae_grp','qatar_grp','italy_grp'].map(k => groupTile(ALL_GROUPS.find(g => g.key === k))).join('')
+    + '</div></section>';
+
+  if (S.news.length){
+    h += '<section class="sec"><div class="sec-head"><h2>📰 آخر الأخبار</h2><a href="#/news">كل الأخبار ›</a></div>'
+      + S.news.slice(0,3).map(newsCard).join('') + '</section>';
+  }
+
+  h += '<section class="sec"><div class="app-strip"><div><h3>📱 تطبيق 11:11 Sports</h3>'
+    + '<p>تذكيرات قبل المباريات، إشعارات فرقك، والبث المباشر — قريباً على المتاجر.</p></div>'
+    + '<div class="stores"><div class="store"><small>قريباً على</small><b>Google Play</b></div><div class="store"><small>قريباً على</small><b>App Store</b></div></div></div></section>';
+  return h;
+};
+
+V.matches = (sub) => {
+  if (sub && ['live','today','upcoming','results'].includes(sub)) S.mTab = sub;
+  else if (!sub && S.mTab === 'live') S.mTab = 'today';
+  const tabs = [['live','🔴 مباشر'],['today','📅 اليوم'],['upcoming','⏭️ القادمة'],['results','🏁 النتائج']];
+  let list;
+  if (S.mTab === 'live') list = S.live.slice();
+  else if (S.mTab === 'today') list = todayList();
+  else if (S.mTab === 'upcoming') list = upcomingList();
+  else list = S.done.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
+
+  const present = LORDER.filter(k => list.some(m => m.leagueKey === k));
+  if (S.mLeague !== 'all' && !present.includes(S.mLeague)) S.mLeague = 'all';
+  if (S.mLeague !== 'all') list = list.filter(m => m.leagueKey === S.mLeague);
+
+  let h = '<div class="wrap"><h1 class="page-title">المباريات</h1>'
+    + '<div class="tabs">' + tabs.map(([k,l]) => '<a class="tab'+(k==='live'?' live-t':'')+(S.mTab===k?' on':'')+'" href="#/matches/'+k+'">'+l+(k==='live'&&S.live.length?' ('+S.live.length+')':'')+'</a>').join('') + '</div>'
+    + '<div class="filters"><select class="sel" data-change="league" aria-label="البطولة"><option value="all">كل البطولات</option>'
+    + present.map(k => '<option value="'+k+'"'+(k===S.mLeague?' selected':'')+'>'+esc(LNAME[k])+'</option>').join('')
+    + '</select>' + tzSelect() + '</div>';
+
+  if (!S.loaded) return h + spinner() + '</div>';
+
+  if (!list.length){
+    const msg = { live:['لا توجد مباريات مباشرة الآن','تابع تبويب «اليوم» لمعرفة مواعيد مباريات اليوم'],
+      today:['لا توجد مباريات اليوم',''], upcoming:['لا توجد مباريات قادمة',''], results:['لا توجد نتائج',''] }[S.mTab];
+    return h + empty(msg[0], msg[1]) + '</div>';
+  }
+
+  if (S.mTab === 'upcoming' || S.mTab === 'results'){
+    const g = {}, order = [];
+    let lst = list;
+    if (S.mTab === 'results') lst = list.slice(0, 120);
+    lst.forEach(m => { const k = dkey(m.date); if (!g[k]){ g[k] = []; order.push(k); } g[k].push(m); });
+    h += order.map(k => '<div class="date-sep">'+dlabel(g[k][0].date)+'</div>' + leagueBlocks(g[k])).join('');
+  } else {
+    h += leagueBlocks(list);
+  }
+  return h + '</div>';
+};
+
+V.live = () => V.matches('live');
+
+function groupTile(g, feat){
+  if (!g) return '';
+  const lo = lgLogo(g.keys[0]);
+  const href = g.keys.length === 1 ? '#/comp/' + g.keys[0] : '#/group/' + g.key;
+  return '<a class="tile'+(feat?' feat':'')+'" href="'+href+'" style="--c:'+(g.color||'var(--gold)')+'">'
+    + (lo ? '<img src="'+lo+'" alt="" loading="lazy" '+imgErr+'>' : '')
+    + '<div><b>'+esc(g.label)+'</b>'+(g.keys.length > 1 ? '<br><small>'+g.keys.length+' بطولات</small>' : '')+'</div></a>';
+}
+
+V.competitions = () => {
+  return '<h1 class="page-title">البطولات</h1><div class="page-sub">اختر البطولة لعرض مبارياتها ونتائجها وجدول ترتيبها.</div>'
+    + '<div class="tiles">' + groupTile(CONFED_GROUPS[0], true) + '</div>'
+    + '<section class="sec"><div class="sec-head"><h2>🌍 المنتخبات</h2></div><div class="tiles">' + CONFED_GROUPS.slice(1).map(g => groupTile(g)).join('') + '</div></section>'
+    + '<section class="sec"><div class="sec-head"><h2>🏟️ الكرة العربية</h2></div><div class="tiles">' + ARAB_GROUPS.map(g => groupTile(g)).join('') + '</div></section>'
+    + '<section class="sec"><div class="sec-head"><h2>⚽ الكرة العالمية</h2></div><div class="tiles">' + WORLD_GROUPS.map(g => groupTile(g)).join('') + '</div></section>';
+};
+
+V.group = (key) => {
+  const g = ALL_GROUPS.find(x => x.key === key);
+  if (!g) return V.notfound();
+  return '<a class="back" href="#/competitions">› كل البطولات</a><h1 class="page-title">'+esc(g.label)+'</h1><div class="page-sub">'+g.keys.length+' بطولات</div>'
+    + '<div class="tiles">' + g.keys.map(k => '<a class="tile" href="#/comp/'+k+'" style="--c:'+g.color+'"><img src="'+lgLogo(k)+'" alt="" loading="lazy" '+imgErr+'><b>'+esc(LNAME[k])+'</b>'
+      + ((S.std[k]||[]).length ? '<small>📊 جدول الترتيب</small>' : '') + '</a>').join('') + '</div>';
+};
+
+function stdTable(rows){
+  return '<div class="std"><table><tr><th>#</th><th class="t-cell">الفريق</th><th>لعب</th><th>ف</th><th>ت</th><th>خ</th><th>+/-</th><th>ن</th></tr>'
+    + rows.map((r,i) => '<tr class="'+(i<4?'top':'')+(i>=rows.length-3&&rows.length>8?' bot':'')+'">'
+      + '<td class="rank">'+esc(r.rank)+'</td>'
+      + '<td class="t-cell"><div class="t-in"><img src="'+safeUrl(r.logo)+'" alt="" loading="lazy" '+imgErr+'><span>'+(S.favs.includes(r.team)?'<span style="color:var(--gold)">★</span> ':'')+esc(r.team)+'</span></div></td>'
+      + '<td>'+esc(r.played)+'</td><td>'+esc(r.win)+'</td><td>'+esc(r.draw)+'</td><td>'+esc(r.lose)+'</td>'
+      + '<td dir="ltr">'+(r.gd > 0 ? '+'+r.gd : esc(r.gd))+'</td><td class="pts">'+esc(r.points)+'</td></tr>').join('')
+    + '</table></div>';
+}
+
+V.comp = (key) => {
+  if (!LNAME[key]) return V.notfound();
+  const grp = ALL_GROUPS.find(g => g.keys.includes(key));
+  const back = grp && grp.keys.length > 1 ? '<a class="back" href="#/group/'+grp.key+'">› '+esc(grp.label)+'</a>' : '<a class="back" href="#/competitions">› كل البطولات</a>';
+  const rows = S.std[key] || [];
+  const tabs = [['upcoming','⏭️ القادمة'],['results','🏁 النتائج']];
+  if (rows.length) tabs.push(['standings','📊 الترتيب']);
+  let t = S.cTab[key] || (rows.length ? 'standings' : 'upcoming');
+  if (!tabs.some(x => x[0] === t)) t = 'upcoming';
+  const ch = BC[key] || [];
+
+  let h = back + '<div class="comp-head"><img src="'+lgLogo(key)+'" alt="" '+imgErr+'><div><h1>'+esc(LNAME[key])+'</h1>'
+    + (ch.length ? '<div class="chs">' + (can('channels') ? ch.map(c => '<a class="ch" href="#/channel/'+enc(c)+'" style="background:'+(CC[c]||'#333')+'">'+esc(c)+'</a>').join('') : lockMsg('channels')) + '</div>' : '')
+    + '</div></div>'
+    + '<div class="tabs">' + tabs.map(([k,l]) => '<button class="tab'+(t===k?' on':'')+'" data-act="ctab" data-k="'+key+'" data-t="'+k+'">'+l+'</button>').join('') + '</div>';
+
+  if (!S.loaded) return h + spinner();
+  if (t === 'standings') return h + stdTable(rows);
+  if (t === 'results'){
+    const r = S.done.filter(m => m.leagueKey === key).sort((a,b) => new Date(b.date) - new Date(a.date));
+    if (!r.length) return h + empty('لا توجد نتائج مسجّلة لهذه البطولة حالياً');
+    const g = {}, order = [];
+    r.forEach(m => { const k = dkey(m.date); if (!g[k]){ g[k] = []; order.push(k); } g[k].push(m); });
+    return h + '<div class="wrap">' + order.map(k => '<div class="date-sep">'+dlabel(g[k][0].date)+'</div>' + g[k].map(m => card(m)).join('')).join('') + '</div>';
+  }
+  const lv = S.live.filter(m => m.leagueKey === key);
+  const u = upcomingList().filter(m => m.leagueKey === key);
+  if (!u.length && !lv.length) return h + empty('لا توجد مباريات قادمة لهذه البطولة حالياً', 'قد تكون البطولة خارج موسمها');
+  const g = {}, order = [];
+  u.forEach(m => { const k = dkey(m.date); if (!g[k]){ g[k] = []; order.push(k); } g[k].push(m); });
+  return h + '<div class="wrap">'
+    + (lv.length ? '<div class="date-sep" style="color:var(--red)">🔴 مباشر الآن</div>' + lv.map(m => card(m)).join('') : '')
+    + order.map(k => '<div class="date-sep">'+dlabel(g[k][0].date)+'</div>' + g[k].map(m => card(m)).join('')).join('') + '</div>';
+};
+
+/* ---- تفاصيل المباراة ---- */
+function findMatch(col, id){
+  const pools = { live:S.live, upcoming:S.up, matches:S.done };
+  let m = (pools[col] || []).find(x => x.id === id);
+  if (!m) m = S.done.concat(S.up, S.live).find(x => x.id === id || fid(x) === id);
+  return m;
+}
+async function fetchFresh(base){
+  const key = fid(base);
+  if (S.detail[key] === 'loading') return;
+  S.detail[key] = 'loading';
+  const tries = [['matches', key], ['upcoming', String(base.id)], ['upcoming', 'auto-' + key], ['live', key]];
+  let best = null;
+  for (const [c, i] of tries){
+    try{
+      const s = await getDoc(doc(db, c, i));
+      if (s.exists()){
+        const d = s.data();
+        best = Object.assign({}, best || {}, d);
+        if (d.events && d.events.length) break;
+      }
+    }catch(e){}
+  }
+  S.detail[key] = best || {};
+  if (route().name === 'match') render();
+}
+
+V.match = (col, id) => {
+  if (!S.loaded) return spinner();
+  const base = findMatch(col, id);
+  if (!base) return '<a class="back" href="#/matches">› المباريات</a>' + empty('لم نعثر على هذه المباراة', 'ربما انتقلت من قائمة القادمة إلى النتائج');
+  const key = fid(base);
+  if (S.detail[key] === undefined) fetchFresh(base);
+  const extra = (S.detail[key] && S.detail[key] !== 'loading') ? S.detail[key] : {};
+  const m = Object.assign({}, extra, base, { events: (extra.events && extra.events.length) ? extra.events : (base.events || []) });
+  ['channels','commentator1','commentator2'].forEach(f => { if (!m[f] || (Array.isArray(m[f]) && !m[f].length)) m[f] = extra[f] || m[f]; });
+  const lv = liveOf(m);
+  const ft = isFT(m);
+
+  let mid;
+  if (lv) mid = scoreHTML(lv.homeGoals ?? 0, lv.awayGoals ?? 0) + '<span class="badge b-red">🔴 ' + (lv.elapsed ? lv.elapsed + "'" : 'مباشر') + '</span>';
+  else if (ft) mid = scoreHTML(m.homeGoals, m.awayGoals) + '<span class="badge b-grey">انتهت</span>';
+  else mid = '<div class="vs">VS</div><div class="time">' + hhmm(m.date) + '</div>';
+
+  const star = t => '<button class="star'+(S.favs.includes(t)?' on':'')+'" data-act="fav" data-team="'+esc(t)+'">'+(S.favs.includes(t)?'★ مفضّل':'☆ أضف للمفضلة')+'</button>';
+
+  let h = '<div class="wrap"><button class="back" data-act="back">› رجوع</button>'
+    + '<div class="md-card"><a class="md-lg" href="#/comp/'+enc(m.leagueKey)+'"><img src="'+lgLogo(m.leagueKey)+'" alt="" '+imgErr+'>'+esc(LNAME[m.leagueKey]||m.leagueName||'')+(m.round?' · '+esc(m.round):'')+'</a>'
+    + '<div class="md-row">'
+    + '<div class="md-side"><img class="logo-c" src="'+safeUrl(m.homeLogo)+'" alt="" '+imgErr+'><b>'+esc(m.homeTeam)+'</b>'+star(m.homeTeam)+'</div>'
+    + '<div class="md-mid">'+mid+'<div class="md-date">'+(m.date ? dlabel(m.date) : '')+'</div></div>'
+    + '<div class="md-side"><img class="logo-c" src="'+safeUrl(m.awayLogo)+'" alt="" '+imgErr+'><b>'+esc(m.awayTeam)+'</b>'+star(m.awayTeam)+'</div>'
+    + '</div></div>';
+
+  if (m.date && !ft && !lv){
+    h += '<div class="info-box"><h3>🕐 موعد المباراة</h3><div class="tz-times">'
+      + TZ.map(t => '<div><small>'+t.label+'</small><b>'+hhmm(m.date, t.o)+'</b></div>').join('') + '</div></div>';
+  }
+
+  const ch = chans(m);
+  if (ch.length){
+    h += '<div class="info-box"><h3>📺 القنوات الناقلة</h3>'
+      + (can('channels') ? '<div class="chips">' + ch.map(c => '<a class="ch" href="#/channel/'+enc(c)+'" style="background:'+(CC[c]||'#333')+'">'+esc(c)+' ›</a>').join('') + '</div>'
+        + (can('freq') ? '<div class="page-sub" style="margin:10px 0 0;font-size:12px">اضغط على القناة لعرض ترددها على الأقمار الصناعية</div>' : '')
+        : lockMsg('channels'))
+      + '</div>';
+  }
+  if (m.commentator1 || m.commentator2){
+    h += '<div class="info-box"><h3>🎙️ المعلّقون</h3>'
+      + (can('commentators') ? '<div class="chips">' + [m.commentator1, m.commentator2].filter(Boolean).map(c => '<span class="chip-c">'+esc(c)+'</span>').join('') + '</div>' : lockMsg('commentators'))
+      + '</div>';
+  }
+
+  const evs = m.events || [];
+  if (ft || lv || evs.length){
+    h += '<div class="info-box"><h3>⚽ أحداث المباراة</h3>';
+    if (!can('events')) h += lockMsg('events');
+    else if (!evs.length) h += S.detail[key] === 'loading' ? '<div class="page-sub" style="margin:0">جارٍ تحميل الأحداث…</div>' : '<div class="page-sub" style="margin:0">لا توجد أحداث مسجّلة لهذه المباراة بعد</div>';
+    else {
+      const evHTML = e => {
+        let ic = '⚽';
+        if (e.category === 'card') ic = e.type === 'red' ? '<span class="card-r"></span>' : '<span class="card-y"></span>';
+        const tag = e.type === 'penalty' ? ' (ركلة جزاء)' : e.type === 'own' ? ' (عكسي)' : '';
+        return '<div class="ev"><span class="min">'+esc(e.minute)+"'</span>"+ic+'<div>'+esc(e.player)+tag
+          + (e.assist ? '<small>صناعة: '+esc(e.assist)+'</small>' : '') + (e.varDetail ? '<small>VAR: '+esc(e.varDetail)+'</small>' : '') + '</div></div>';
+      };
+      h += '<div class="ev-cols"><div class="ev-col"><h4>'+esc(m.homeTeam)+'</h4>'+(evs.filter(e=>e.team===m.homeTeam).map(evHTML).join('')||'<div class="sc">—</div>')+'</div>'
+        + '<div class="ev-col"><h4>'+esc(m.awayTeam)+'</h4>'+(evs.filter(e=>e.team===m.awayTeam).map(evHTML).join('')||'<div class="sc">—</div>')+'</div></div>';
+    }
+    h += '</div>';
+  }
+  return h + '</div>';
+};
+
+/* ---- القنوات ---- */
+function allChannels(){
+  const set = new Set();
+  Object.values(BC).forEach(a => a.forEach(c => set.add(c)));
+  Object.keys(FREQ).forEach(c => set.add(c));
+  return Array.from(set);
+}
+function chLogo(c){ return '<div class="ch-logo" style="background:'+(CC[c]||'#333')+'">'+esc(c.replace(/^(قناة|تطبيق|منصة)\s*/,'').charAt(0))+'</div>'; }
+
+V.channels = () => {
+  const list = allChannels();
+  const sat = list.filter(c => !STREAMING_ONLY.includes(c));
+  const dig = list.filter(c => STREAMING_ONLY.includes(c));
+  const tile = c => {
+    const n = Object.keys(BC).filter(k => BC[k].includes(c)).length;
+    return '<a class="ch-tile" href="#/channel/'+enc(c)+'">'+chLogo(c)+'<div><b>'+esc(c)+'</b><small>'+(n ? n+' بطولة' : '')+(FREQ[c] ? ' · 🛰️ '+FREQ[c].length+' تردد' : '')+'</small></div></a>';
+  };
+  return '<h1 class="page-title">القنوات الناقلة</h1><div class="page-sub">اختر القناة لمعرفة البطولات التي تنقلها وتردداتها على الأقمار الصناعية.</div>'
+    + '<section class="sec" style="margin-top:10px"><div class="sec-head"><h2>🛰️ القنوات الفضائية</h2></div><div class="ch-grid">' + sat.map(tile).join('') + '</div></section>'
+    + '<section class="sec"><div class="sec-head"><h2>📲 المنصات الرقمية</h2></div><div class="ch-grid">' + dig.map(tile).join('') + '</div></section>';
+};
+
+V.channel = (name) => {
+  const comps = LORDER.filter(k => (BC[k]||[]).includes(name));
+  if (!comps.length && !FREQ[name]) return V.notfound();
+  let h = '<a class="back" href="#/channels">› كل القنوات</a><div class="comp-head">'+chLogo(name)+'<div><h1>'+esc(name)+'</h1>'
+    + '<div class="page-sub" style="margin:4px 0 0">'+(STREAMING_ONLY.includes(name) ? '📲 منصة بث رقمية عبر الإنترنت' : '🛰️ قناة فضائية')+'</div></div></div>';
+
+  if (FREQ[name]){
+    h += '<div class="info-box"><h3>🛰️ الترددات</h3>' + (can('freq')
+      ? '<div class="std"><table class="freq"><tr><th>القمر</th><th>التردد</th><th>الاستقطاب</th><th>معدل الترميز</th><th>FEC</th></tr>'
+        + FREQ[name].map(f => '<tr><td>'+esc(f[0])+'</td><td><b>'+f[1]+'</b></td><td>'+(f[2]==='V'?'عمودي V':'أفقي H')+'</td><td>'+f[3]+'</td><td>'+f[4]+'</td></tr>').join('')
+        + '</table></div><div class="page-sub" style="margin:10px 0 0;font-size:12px">قد تتغيّر الترددات من مصدرها — تأكّد من القناة عند الحاجة.</div>'
+      : lockMsg('freq')) + '</div>';
+  } else if (STREAMING_ONLY.includes(name)){
+    h += '<div class="info-box"><h3>📲 طريقة المشاهدة</h3><div class="page-sub" style="margin:0">لا تبث هذه المنصة على الأقمار الصناعية — تُشاهد عبر تطبيقها أو موقعها الرسمي باشتراك منها.</div></div>';
+  }
+  if (comps.length){
+    h += '<section class="sec"><div class="sec-head"><h2>🏆 البطولات التي تنقلها</h2></div><div class="tiles">'
+      + comps.map(k => '<a class="tile" href="#/comp/'+k+'"><img src="'+lgLogo(k)+'" alt="" loading="lazy" '+imgErr+'><b>'+esc(LNAME[k])+'</b></a>').join('') + '</div></section>';
+  }
+  if (S.loaded){
+    const ms = upcomingList().filter(m => chans(m).includes(name)).slice(0, 12);
+    if (ms.length) h += '<section class="sec"><div class="sec-head"><h2>📅 مبارياتها القادمة</h2></div><div class="grid-2">' + ms.map(m => card(m)).join('') + '</div></section>';
+  }
+  return h;
+};
+
+/* ---- الأخبار ---- */
+function newsCard(n){
+  const locked = n.exclusive && !can('exclusive');
+  const d = n.publishedAt ? new Date(n.publishedAt) : null;
+  const when = d && !isNaN(d) ? d.getDate() + ' ' + MONTHS[d.getMonth()] : '';
+  const desc = String(n.description || '');
+  let body = '';
+  if (locked) body = '<p>' + lockMsg('exclusive') + '</p>';
+  else if (desc.length > 220) body = '<p>'+esc(desc.slice(0,200))+'…</p><details><summary>اقرأ المزيد</summary><p>'+esc(desc)+'</p></details>';
+  else if (desc) body = '<p>'+esc(desc)+'</p>';
+  return '<article class="news"><div class="meta">'
+    + (n.exclusive ? '<span class="badge b-gold">💎 حصري</span>' : '') + (n.category ? '<span class="badge b-grey">'+esc(n.category)+'</span>' : '')
+    + '<span>'+esc(n.source || '11:11')+'</span>' + (when ? '<span>· '+when+'</span>' : '') + '</div>'
+    + '<h3>'+esc(n.title)+'</h3>' + body + '</article>';
+}
+
+V.news = () => {
+  let h = '<div class="wrap"><h1 class="page-title">الأخبار</h1><div class="page-sub">أخبار الحقوق والبث والمعلّقين وتقنيات النقل التلفزيوني.</div>';
+  if (!S.loaded) return h + spinner() + '</div>';
+  h += S.news.length ? S.news.map(newsCard).join('') : empty('لا توجد أخبار حالياً');
+  h += '</div>';
+  if (S.docs.length){
+    h += '<section class="sec"><div class="sec-head"><h2>🎬 الوثائقيات</h2></div><div class="docs">'
+      + S.docs.map(d => {
+        const u = safeUrl(d.url), img = safeUrl(d.image);
+        return '<'+(u?'a href="'+u+'" target="_blank" rel="noopener"':'div')+' class="doc"><div class="poster" style="'+(img?"background-image:url('"+img+"')":'')+'">'+(d.duration?'<span>⏱ '+esc(d.duration)+'</span>':'')+'</div><b>'+esc(d.title)+'</b></'+(u?'a':'div')+'>';
+      }).join('') + '</div></section>';
+  }
+  return h;
+};
+
+/* ---- الاشتراك ---- */
+V.plans = () => {
+  const f = (t, ok = true) => '<li'+(ok?'':' class="no"')+'>'+t+'</li>';
+  const memberBtn = S.user
+    ? '<span class="btn btn-dark btn-block">✓ أنت مسجّل</span>'
+    : '<a class="btn btn-line btn-block" href="#/login?m=register">أنشئ حساباً مجاناً</a>';
+  return '<h1 class="page-title">الباقات والاشتراك</h1><div class="page-sub">اختر ما يناسبك — ابدأ مجاناً وانتقل للمميزة متى شئت.</div>'
+    + (PROMO ? '<div class="note" style="margin-bottom:20px">🎁 <b>فترة ترويجية:</b> جميع مزايا الباقة المميزة متاحة لك الآن <b>مجاناً على الموقع</b> — المعلّقون، الترددات، الأخبار الحصرية وتفاصيل المباريات. بعد انتهاء الفترة الترويجية تبقى الباقة المميزة متاحة عبر التطبيق.</div>' : '')
+    + '<div class="plans">'
+    + '<div class="plan"><h3>زائر</h3><div class="desc">تصفّح بدون حساب</div><div class="price">مجاناً</div>'
+    + '<ul class="feats">'+f('مواعيد جميع المباريات')+f('النتائج وجداول الترتيب')+f('الأخبار العامة')+f('القنوات الناقلة',false)+f('الفرق المفضلة',false)+f('أسماء المعلّقين',false)+'</ul>'
+    + '<a class="btn btn-dark btn-block" href="#/matches">تصفّح المباريات</a></div>'
+    + '<div class="plan"><h3>عضو</h3><div class="desc">حساب مجاني بالبريد أو جوجل</div><div class="price">مجاناً</div>'
+    + '<ul class="feats">'+f('كل مزايا الزائر')+f('القنوات الناقلة لكل مباراة')+f('فرقك المفضلة على الموقع والتطبيق')+f('أسماء المعلّقين',false)+f('الترددات والأخبار الحصرية',false)+f('التذكيرات قبل المباراة',false)+'</ul>'
+    + memberBtn + '</div>'
+    + '<div class="plan best"><span class="ribbon">الأكثر قيمة</span><h3>💎 المميزة</h3><div class="desc">كل شيء بلا حدود</div>'
+    + '<div class="price">$2.99 <small>/ شهرياً</small></div><div class="price-alt">أو $19.99 سنوياً — وفّر 44% · تجربة مجانية 7 أيام</div>'
+    + '<ul class="feats">'+f('كل مزايا العضو')+f('أسماء المعلّقين لكل مباراة')+f('ترددات القنوات والأقمار')+f('تفاصيل الأهداف والبطاقات')+f('الأخبار الحصرية')+f('تذكيرات قبل المباراة (التطبيق)')+f('البث المباشر (التطبيق)')+'</ul>'
+    + (PROMO ? '<span class="btn btn-gold btn-block">🎁 مفعّلة لك مجاناً على الموقع</span>' : '<span class="btn btn-gold btn-block" aria-disabled="true">اشترك عبر التطبيق — قريباً</span>')
+    + '</div></div>'
+    + '<section class="sec faq"><div class="sec-head"><h2>أسئلة شائعة</h2></div>'
+    + '<details><summary>كيف أدفع الاشتراك؟</summary><p>يتم الاشتراك والدفع من داخل تطبيق 11:11 عبر متجر Google Play أو App Store، ويمكنك إلغاؤه في أي وقت من إعدادات المتجر.</p></details>'
+    + '<details><summary>هل حسابي على الموقع هو نفسه في التطبيق؟</summary><p>نعم، سجّل الدخول بالبريد نفسه أو بحساب جوجل نفسه وستجد فرقك المفضلة محفوظة في الموقع والتطبيق معاً.</p></details>'
+    + '<details><summary>متى تنتهي الفترة الترويجية؟</summary><p>سنعلن عن ذلك مسبقاً على الموقع وحسابنا على إكس. حتى ذلك الحين كل المزايا مجانية على الموقع.</p></details>'
+    + '<details><summary>ما الفرق بين الموقع والتطبيق؟</summary><p>التطبيق يضيف التذكيرات قبل المباريات والإشعارات والبث المباشر، بينما يقدّم الموقع المواعيد والقنوات والنتائج والترتيب.</p></details>'
+    + '</section>';
+};
+
+/* ---- الدخول ---- */
+const G_SVG = '<svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
+
+V.login = (q) => {
+  if (S.user) { location.hash = '#/account'; return ''; }
+  const mode = S.authMode;
+  const msg = S.authMsg ? '<div class="msg '+S.authMsg[0]+'">'+esc(S.authMsg[1])+'</div>' : '';
+  const busy = S.authBusy ? ' disabled' : '';
+  if (mode === 'reset'){
+    return '<div class="auth"><h1>استعادة كلمة المرور</h1><div class="sub">أدخل بريدك وسنرسل لك رابطاً لتعيين كلمة مرور جديدة.</div>' + msg
+      + '<form data-form="reset"><div class="field"><label>البريد الإلكتروني</label><input type="email" name="email" dir="ltr" required autocomplete="email"></div>'
+      + '<button class="btn btn-gold btn-block"'+busy+'>إرسال الرابط</button></form>'
+      + '<div class="center" style="margin-top:16px"><button class="link-btn" data-act="mode" data-m="login">› العودة لتسجيل الدخول</button></div></div>';
+  }
+  const reg = mode === 'register';
+  return '<div class="auth"><h1>'+(reg?'إنشاء حساب':'تسجيل الدخول')+'</h1>'
+    + '<div class="sub">'+(reg?'حساب مجاني يحفظ فرقك المفضلة ويعمل على الموقع والتطبيق.':'أهلاً بعودتك — حسابك نفسه في الموقع والتطبيق.')+'</div>'
+    + '<div class="seg"><button class="'+(!reg?'on':'')+'" data-act="mode" data-m="login">دخول</button><button class="'+(reg?'on':'')+'" data-act="mode" data-m="register">حساب جديد</button></div>'
+    + msg
+    + '<button class="g-btn" data-act="google"'+busy+'>'+G_SVG+'المتابعة بحساب جوجل</button>'
+    + '<div class="or">أو بالبريد الإلكتروني</div>'
+    + '<form data-form="'+mode+'">'
+    + (reg ? '<div class="field"><label>الاسم</label><input name="name" required maxlength="40" autocomplete="name"></div>' : '')
+    + '<div class="field"><label>البريد الإلكتروني</label><input type="email" name="email" dir="ltr" required autocomplete="email"></div>'
+    + '<div class="field"><label>كلمة المرور</label><input type="password" name="pass" dir="ltr" required minlength="6" autocomplete="'+(reg?'new-password':'current-password')+'"></div>'
+    + '<button class="btn btn-gold btn-block"'+busy+'>'+(S.authBusy?'جارٍ…':(reg?'إنشاء الحساب':'دخول'))+'</button></form>'
+    + (!reg ? '<div class="center" style="margin-top:16px"><button class="link-btn" data-act="mode" data-m="reset">نسيت كلمة المرور؟</button></div>' : '<div class="center page-sub" style="margin:14px 0 0;font-size:12px">بإنشاء الحساب فإنك توافق على <a href="terms.html" style="color:var(--gold)">شروط الاستخدام</a> و<a href="privacy.html" style="color:var(--gold)">سياسة الخصوصية</a></div>')
+    + '</div>';
+};
+
+/* ---- الحساب ---- */
+V.account = () => {
+  if (!S.authReady) return spinner();
+  if (!S.user) return V.login({});
+  const u = S.user;
+  const plan = PROMO ? '💎 المميزة — مجاناً (فترة ترويجية)' : 'عضو';
+  const favs = S.favs;
+  return '<div class="wrap"><div class="acc-head"><div class="avatar">'+esc(initial(u))+'</div><div><h1>'+esc(u.displayName || 'مستخدم 11:11')+'</h1><small dir="ltr">'+esc(u.email || '')+'</small></div></div>'
+    + '<div class="info-box"><h3>💎 باقتك</h3><div style="font-size:14px;font-weight:700">'+plan+'</div><div style="margin-top:10px"><a class="link-btn" href="#/plans">عرض الباقات ›</a></div></div>'
+    + '<div class="info-box"><h3>✏️ اسم المستخدم</h3><form data-form="name" class="row-form"><input name="name" value="'+esc(u.displayName||'')+'" maxlength="40" required><button class="btn btn-gold">حفظ</button></form></div>'
+    + '<div class="info-box"><h3>⭐ فرقي المفضلة ('+favs.length+')</h3>'
+    + (favs.length ? '<div class="fav-list">' + favs.map(t => '<span class="fav-item">'+esc(t)+'<button data-act="unfav" data-team="'+esc(t)+'" aria-label="إزالة">×</button></span>').join('') + '</div>'
+      : '<div class="page-sub" style="margin:0">لم تضف فرقاً بعد. افتح أي مباراة واضغط «☆ أضف للمفضلة» بجانب الفريق.</div>')
+    + '</div>'
+    + (favMatches().length ? '<section class="sec"><div class="sec-head"><h2>📅 مباريات فرقك القادمة</h2></div>' + favMatches().map(m => card(m)).join('') + '</section>' : '')
+    + '<div class="info-box"><h3>🕐 التوقيت</h3>' + tzSelect() + '</div>'
+    + '<div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-dark" data-act="logout">تسجيل الخروج</button>'
+    + '<a class="btn btn-dark" href="https://x.com/elevenelev1111" target="_blank" rel="noopener">طلب حذف الحساب</a></div></div>';
+};
+
+V.notfound = () => empty('الصفحة غير موجودة', '<a href="#/" style="color:var(--gold)">العودة للرئيسية</a>');
+
+/* ================= التوجيه ================= */
+function route(){
+  const raw = location.hash.replace(/^#\/?/, '');
+  const [path, qs] = raw.split('?');
+  const parts = path.split('/').filter(Boolean).map(p => { try{ return decodeURIComponent(p); }catch(e){ return p; } });
+  const q = {}; (qs || '').split('&').forEach(kv => { const [k,v] = kv.split('='); if (k) q[k] = decodeURIComponent(v || ''); });
+  return { name: parts[0] || 'home', args: parts.slice(1), q };
+}
+const NAV_OF = { home:'home', matches:'matches', live:'live', match:'matches', competitions:'competitions', group:'competitions', comp:'competitions', channels:'channels', channel:'channels', news:'news', plans:'plans', login:'account', account:'account' };
+
+function render(){
+  const r = route();
+  const fn = V[r.name] || V.notfound;
+  let html;
+  try{
+    html = r.name === 'login' ? fn(r.q) : fn(...r.args);
+  }catch(e){
+    console.error(e);
+    html = empty('حدث خطأ أثناء عرض الصفحة', esc(e.message));
+  }
+  if (S.loaded && S.error === 'empty' && ['home','matches','live'].includes(r.name))
+    html = '<div class="msg err" style="margin-bottom:14px">تعذّر جلب البيانات حالياً — تحقّق من اتصالك ثم <a href="javascript:location.reload()" style="text-decoration:underline">أعد المحاولة</a>.</div>' + html;
+  $('view').innerHTML = html;
+
+  const active = NAV_OF[r.name];
+  document.querySelectorAll('[data-r]').forEach(a => a.classList.toggle('on', a.dataset.r === active || (active === 'live' && a.dataset.r === 'live')));
+  if (r.name === 'matches' && S.mTab === 'live') document.querySelectorAll('[data-r=live]').forEach(a => a.classList.add('on'));
+  if (r.name === 'matches' && S.mTab === 'live') document.querySelectorAll('[data-r=matches]').forEach(a => a.classList.remove('on'));
+  $('liveDot').style.display = S.live.length ? 'block' : 'none';
+
+  const titles = { home:'', matches:'المباريات', live:'مباشر', competitions:'البطولات', group:'البطولات', comp: LNAME[r.args[0]] || 'البطولة', channels:'القنوات', channel: r.args[0] || 'القناة', news:'الأخبار', plans:'الاشتراك', login:'تسجيل الدخول', account:'حسابي', match:'تفاصيل المباراة' };
+  document.title = (titles[r.name] ? titles[r.name] + ' — ' : '') + '11:11 Sports';
+}
+
+function renderAuthUI(){
+  const u = S.user;
+  $('authSlot').innerHTML = u
+    ? '<a class="user-chip" href="#/account"><div class="avatar">'+esc(initial(u))+'</div><span>'+esc(u.displayName || 'حسابي')+'</span></a>'
+    : '<a class="btn-login" href="#/login">تسجيل الدخول</a>';
+  $('drawerHead').innerHTML = u
+    ? '<div class="avatar">'+esc(initial(u))+'</div><div><b>'+esc(u.displayName || 'مستخدم 11:11')+'</b><small>'+(PROMO?'💎 مميزة — ترويجي':'عضو')+'</small></div>'
+    : '<div class="avatar" style="background:var(--surface);color:var(--txt2)">👤</div><div><b>زائر</b><small><a href="#/login" style="color:var(--gold)">سجّل دخولك</a></small></div>';
+  $('bottomAccTxt').textContent = u ? 'حسابي' : 'دخول';
+  $('drawerAcc').lastChild.textContent = u ? 'حسابي' : 'تسجيل الدخول';
+}
+
+/* ================= الأحداث ================= */
+const AUTH_ERR = {
+  'auth/invalid-email':'البريد الإلكتروني غير صحيح',
+  'auth/user-not-found':'لا يوجد حساب بهذا البريد',
+  'auth/wrong-password':'كلمة المرور غير صحيحة',
+  'auth/invalid-credential':'البريد أو كلمة المرور غير صحيحة',
+  'auth/invalid-login-credentials':'البريد أو كلمة المرور غير صحيحة',
+  'auth/email-already-in-use':'هذا البريد مسجّل مسبقاً — جرّب تسجيل الدخول',
+  'auth/weak-password':'كلمة المرور ضعيفة — 6 أحرف على الأقل',
+  'auth/too-many-requests':'محاولات كثيرة — انتظر قليلاً ثم حاول مجدداً',
+  'auth/network-request-failed':'تعذّر الاتصال — تحقّق من الإنترنت',
+  'auth/popup-closed-by-user':'أُغلقت نافذة جوجل قبل إكمال الدخول',
+  'auth/cancelled-popup-request':'أُلغيت العملية',
+  'auth/popup-blocked':'المتصفح منع نافذة جوجل — اسمح بالنوافذ المنبثقة وأعد المحاولة',
+  'auth/unauthorized-domain':'هذا النطاق غير مفعّل بعد لتسجيل الدخول بجوجل',
+  'auth/operation-not-allowed':'طريقة الدخول هذه غير مفعّلة حالياً',
+};
+const authErr = e => AUTH_ERR[e && e.code] || 'حدث خطأ غير متوقع — حاول مرة أخرى';
+
+async function toggleFav(team){
+  if (!S.user){ toast('سجّل دخولك لحفظ فرقك المفضلة'); location.hash = '#/login'; return; }
+  if (!can('favorites')) return;
+  const prev = S.favs.slice();
+  S.favs = S.favs.includes(team) ? S.favs.filter(t => t !== team) : S.favs.concat(team);
+  render();
+  try{
+    await setDoc(doc(db, 'favorites', S.user.uid), { teams: S.favs }, { merge:true });
+    toast(S.favs.includes(team) ? '★ أُضيف ' + team + ' للمفضلة' : 'أُزيل ' + team + ' من المفضلة');
+  }catch(e){ S.favs = prev; render(); toast('تعذّر الحفظ — حاول مجدداً'); }
+}
+
+document.addEventListener('click', async e => {
+  const a = e.target.closest('[data-act]');
+  if (!a) return;
+  const act = a.dataset.act;
+  if (act === 'back'){ if (navCount > 0) history.back(); else location.hash = '#/matches'; }
+  else if (act === 'ctab'){ S.cTab[a.dataset.k] = a.dataset.t; render(); }
+  else if (act === 'mode'){ S.authMode = a.dataset.m; S.authMsg = null; render(); }
+  else if (act === 'fav' || act === 'unfav'){ toggleFav(a.dataset.team); }
+  else if (act === 'logout'){ await signOut(auth); toast('تم تسجيل الخروج'); location.hash = '#/'; }
+  else if (act === 'google'){
+    S.authBusy = true; S.authMsg = null; render();
+    try{ await signInWithPopup(auth, new GoogleAuthProvider()); }
+    catch(err){ S.authMsg = ['err', authErr(err)]; }
+    S.authBusy = false; render();
+  }
+});
+
+document.addEventListener('change', e => {
+  const t = e.target.closest('[data-change]');
+  if (!t) return;
+  if (t.dataset.change === 'tz'){ S.tz = t.value; storeSet('tz', t.value); render(); }
+  if (t.dataset.change === 'league'){ S.mLeague = t.value; render(); }
+});
+
+document.addEventListener('submit', async e => {
+  const f = e.target.closest('form[data-form]');
+  if (!f) return;
+  e.preventDefault();
+  const kind = f.dataset.form;
+  const v = Object.fromEntries(new FormData(f).entries());
+  if (kind === 'name'){
+    const n = String(v.name || '').trim();
+    if (!n) return;
+    try{ await updateProfile(S.user, { displayName:n }); renderAuthUI(); render(); toast('✓ حُفظ الاسم'); }
+    catch(err){ toast('تعذّر حفظ الاسم'); }
+    return;
+  }
+  S.authBusy = true; S.authMsg = null; render();
+  try{
+    if (kind === 'login'){
+      await signInWithEmailAndPassword(auth, v.email.trim(), v.pass);
+    } else if (kind === 'register'){
+      const cred = await createUserWithEmailAndPassword(auth, v.email.trim(), v.pass);
+      const n = String(v.name || '').trim();
+      if (n){ await updateProfile(cred.user, { displayName:n }); S.user = auth.currentUser; renderAuthUI(); }
+      toast('🎉 أهلاً بك في 11:11');
+    } else if (kind === 'reset'){
+      await sendPasswordResetEmail(auth, v.email.trim());
+      S.authMsg = ['ok', 'أرسلنا رابط استعادة كلمة المرور إلى بريدك — تفقّد صندوق الوارد والرسائل غير المرغوبة.'];
+    }
+  }catch(err){ S.authMsg = ['err', authErr(err)]; }
+  S.authBusy = false;
+  render();
+});
+
+/* القائمة الجانبية */
+$('menuBtn').onclick = () => document.body.classList.add('menu-open');
+$('drawerBg').onclick = () => document.body.classList.remove('menu-open');
+$('drawer').addEventListener('click', e => { if (e.target.closest('a')) document.body.classList.remove('menu-open'); });
+
+let lastRoute = '', navCount = 0;
+window.addEventListener('hashchange', () => {
+  const r = route();
+  const key = r.name + '/' + r.args.join('/') + '?' + (r.q.m || '');
+  navCount++;
+  if (key !== lastRoute){
+    window.scrollTo(0, 0);
+    if (r.name === 'login'){ S.authMode = ['login','register','reset'].includes(r.q.m) ? r.q.m : 'login'; S.authMsg = null; }
+  }
+  lastRoute = key;
+  document.body.classList.remove('menu-open');
+  render();
+});
+
+/* ================= المصادقة ================= */
+onAuthStateChanged(auth, async u => {
+  S.user = u; S.authReady = true; S.favs = [];
+  renderAuthUI();
+  if (u){
+    try{
+      const s = await getDoc(doc(db, 'favorites', u.uid));
+      if (s.exists() && Array.isArray(s.data().teams)) S.favs = s.data().teams;
+    }catch(e){}
+    if (route().name === 'login'){ location.hash = '#/account'; return; }
+  }
+  render();
+});
+
+/* ================= التشغيل ================= */
+{ const r0 = route(); lastRoute = r0.name + '/' + r0.args.join('/') + '?' + (r0.q.m || ''); if (r0.name === 'login' && ['login','register','reset'].includes(r0.q.m)) S.authMode = r0.q.m; }
+renderAuthUI();
+render();
+loadAll().then(render).catch(e => { S.loaded = true; S.error = 'empty'; render(); });
+
+const busyRoutes = ['login','account'];
+setInterval(async () => {
+  await loadLive();
+  if (!busyRoutes.includes(route().name)) render();
+  else $('liveDot').style.display = S.live.length ? 'block' : 'none';
+}, 60000);
+setInterval(async () => {
+  await loadAll().catch(() => {});
+  if (!busyRoutes.includes(route().name)) render();
+}, 300000);
+</script>
 </body>
 </html>
