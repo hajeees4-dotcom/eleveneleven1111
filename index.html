@@ -421,7 +421,7 @@ footer{border-top:1px solid var(--border);margin-top:50px;padding:32px 16px 28px
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, getDocs, doc, getDoc, setDoc }
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc, increment }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   updateProfile, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup }
@@ -1254,7 +1254,7 @@ document.addEventListener('submit', async e => {
     } else if (kind === 'register'){
       const cred = await createUserWithEmailAndPassword(auth, v.email.trim(), v.pass);
       const n = String(v.name || '').trim();
-      if (n){ await updateProfile(cred.user, { displayName:n }); S.user = auth.currentUser; renderAuthUI(); }
+      if (n){ await updateProfile(cred.user, { displayName:n }); S.user = auth.currentUser; renderAuthUI(); recordUser(auth.currentUser); }
       toast('🎉 أهلاً بك في 11:11');
     } else if (kind === 'reset'){
       await sendPasswordResetEmail(auth, v.email.trim());
@@ -1284,10 +1284,39 @@ window.addEventListener('hashchange', () => {
   render();
 });
 
+/* ================= إحصاءات الزيارة (أعداد مجهولة الهوية فقط) ================= */
+function statDay(){ const x = new Date(Date.now() + 4*3600e3); return x.getUTCFullYear()+'-'+p2(x.getUTCMonth()+1)+'-'+p2(x.getUTCDate()); }
+async function trackVisit(){
+  const day = statDay();
+  let first = false, newSession = false;
+  try { if (localStorage.getItem('e11_stat_day') !== day){ first = true; localStorage.setItem('e11_stat_day', day); } } catch(e){ first = true; }
+  try { if (!sessionStorage.getItem('e11_sess')){ newSession = true; sessionStorage.setItem('e11_sess', '1'); } } catch(e){ newSession = true; }
+  if (!first && !newSession) return;
+  const data = {};
+  if (newSession) data.webOpens = increment(1);
+  if (first) data.webUnique = increment(1);
+  try { await setDoc(doc(db, 'stats', day), data, { merge:true }); } catch(e){}
+}
+async function recordUser(u){
+  if (!u) return;
+  const now = new Date().toISOString();
+  let created = now;
+  try { if (u.metadata && u.metadata.creationTime) created = new Date(u.metadata.creationTime).toISOString(); } catch(e){}
+  try {
+    await setDoc(doc(db, 'users', u.uid), {
+      name: u.displayName || '', email: u.email || '',
+      provider: (u.providerData && u.providerData[0] && u.providerData[0].providerId) || 'password',
+      createdAt: created, lastSeen: now, platform: 'web',
+    }, { merge:true });
+  } catch(e){}
+}
+trackVisit();
+
 /* ================= المصادقة ================= */
 onAuthStateChanged(auth, async u => {
   S.user = u; S.authReady = true; S.favs = [];
   renderAuthUI();
+  recordUser(u);
   if (u){
     try{
       const s = await getDoc(doc(db, 'favorites', u.uid));
